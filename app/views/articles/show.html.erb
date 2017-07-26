@@ -1,4 +1,4 @@
 <%= @article.title %><br>
-<%= @article.content %>
+<%= @article.content.html_safe %>
 <%= render "article_navigation"%>
 <%= render "article_actions"%>
