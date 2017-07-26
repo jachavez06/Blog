@@ -1,3 +1,3 @@
-CKEDITOR.editorConfig = function (config) {
-  config.extraPlugins = 'codesnippet,';
-}
+//CKEDITOR.editorConfig = function (config) {
+//  config.extraPlugins = 'codesnippet,';
+//}
