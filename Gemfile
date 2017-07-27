@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'pg'
 gem 'will_paginate', '3.1.5'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'paperclip'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
