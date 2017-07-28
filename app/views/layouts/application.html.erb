@@ -25,7 +25,11 @@
     <%= render partial: "layouts/messages" %>
     
     <div class="container-fluid">
-        <%= yield %>
+      <div class="row">
+        <div class="col-md-8">
+          <%= yield %>
+        </div>
+      </div>
     </div>
 
   </body>
