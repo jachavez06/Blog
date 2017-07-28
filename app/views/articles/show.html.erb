@@ -8,14 +8,14 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="cliente">
-            <%= @article.created_at %>
+            <%= @article.created_at.strftime('%B %d, %Y') %>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
         <div class="cliente">
-            <%= @article.updated_at %>
+            <%= @article.updated_at.strftime('%B %d, %Y') %>
         </div>
     </div>
 </div>
