@@ -1,4 +1,16 @@
-<%= @article.title %><br>
-<%= @article.content.html_safe %>
+<div class="row">
+    <div class="col-xs-5">
+        <div class="cliente">
+            <%= @article.title %>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-10">
+        <div class="cliente">
+            <%= @article.content.html_safe %>
+        </div>
+    </div>
+</div>
 <%= render "article_navigation" %>
 <%= render "article_actions" %>
