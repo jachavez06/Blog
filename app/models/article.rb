@@ -2,11 +2,21 @@ class Article < ApplicationRecord
     validates :title, presence: true, length: {minimum:3, maximum:50}
     validates :content, presence:true, length: {minimum: 10} 
 
-    def slug
-        title.downcase.gsub(" ", "-")
-    end 
+    after_create :update_slug
+    before_update :assign_slug 
 
     def to_param
         slug
     end 
+
+    private
+    
+    def assign_slug
+        self.slug = title.parameterize
+    end 
+
+    def update_slug
+        update_attributes slug: assign_slug
+    end
+
 end
