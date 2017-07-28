@@ -14,13 +14,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.cliente {
-	border: #cdcdcd medium solid;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-}
-
 hr {
        display: block;
        position: relative;
@@ -36,3 +29,10 @@ hr {
        border-top: 1px solid #aaaaaa;
        border-bottom: 1px solid #ffffff;
     }
+
+.cliente {
+	border: #cdcdcd medium solid;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
