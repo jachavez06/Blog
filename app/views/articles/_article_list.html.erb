@@ -1,14 +1,16 @@
 <% obj.each do |article| %>
+    
     <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-12">
             <div class="well well-lg">
                 <div class="article-title">
                     <%= link_to article.title, article_path(article) %>
                 </div>
                 <div class="article-body">
-                    <%= truncate(article.content, length: 100) %>
+                    <%= truncate(strip_tags(article.content), length: 500) %>
                 </div>
             </div>
         </div>
     </div>
+
 <% end %>
