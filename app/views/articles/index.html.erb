@@ -1,13 +1,43 @@
-<h1>Listing all Articles:</h1>
-
-<div align="center">
-    <%= will_paginate %>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="cliente">
+            <h1>Listing all Articles:</h1>
+        </div>
+    </div>
 </div>
 
-<%= render 'article_list', obj: @articles %>
-
-<div align="center">
-    <%= will_paginate %>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="cliente">
+            <div align="center">
+                <%= will_paginate %>
+            </div>
+        </div>
+    </div>
 </div>
 
-<%= link_to 'New', new_article_path(), class: "btn btn-default" %>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="cliente">
+            <%= render 'article_list', obj: @articles %>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="cliente">
+            <div align="center">
+                <%= will_paginate %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="cliente">
+            <%= link_to 'New', new_article_path(), class: "btn btn-success pull-right" %>
+        </div>
+    </div>
+</div>
