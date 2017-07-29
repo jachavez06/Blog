@@ -113,3 +113,10 @@ hr {
     overflow: hidden; 
 }
 /* end pagination rules */ 
+
+// Remove rounded corners of navbar
+.navbar {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
