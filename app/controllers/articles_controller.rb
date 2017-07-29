@@ -48,7 +48,7 @@ class ArticlesController < ApplicationController
     end 
 
     def articles_params
-        params.require(:article).permit(:title, :content)
+        params.require(:article).permit(:title, :content, :meta_data_title, :meta_data_description, :meta_data_keywords)
     end
 
     def require_admin
