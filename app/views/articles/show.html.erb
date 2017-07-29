@@ -21,6 +21,8 @@
         </div>
     </div>
 </div>
+
+<br>
 <div class="row">
     <div class="col-xs-12">
         <div class="">
@@ -28,17 +30,21 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-xs-12">
-        <div class="">
-            <%= render "article_actions" %>
+
+<% if is_admin? %>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="pull-right">
+                <br>
+                <%= render "article_actions" %>
+            </div>
         </div>
     </div>
-</div>
+<% end %>
 
 <div id="article-url" value="<%= request.original_url %>" style="display:none"></div>
 <div id="article-id" value="<%= @article.id %>" style="display:none"></div>
-
+<hr>
 <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
