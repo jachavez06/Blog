@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user, :logged_in?, :is_admin?
-  before_action :prepare_meta_tags, if: "request.get?"
+  
+  #before_action :prepare_meta_tags, if: "request.get?"
 
   def prepare_meta_tags(options={})
     site_name   = "JChavez Code"

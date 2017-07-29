@@ -24,6 +24,9 @@ class ArticlesController < ApplicationController
     end 
 
     def show
+        set_meta_tags title: @article.meta_data_title
+        set_meta_tags description: @article.meta_data_description
+        set_meta_tags keywords: @article.meta_data_keywords
     end 
 
     def update
