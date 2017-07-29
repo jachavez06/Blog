@@ -11,6 +11,7 @@ gem 'pg'
 gem 'will_paginate', '3.1.5'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'paperclip'
+gem 'meta-tags'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
