@@ -12,7 +12,11 @@
 
     <ul class="nav navbar-nav navbar-right">
       <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-      <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, login_path() %></li>
+      <% if logged_in? %>
+        <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span> Logout'.html_safe, logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, login_path() %></li>
+      <% end %>
     </ul>
 
   </div>
