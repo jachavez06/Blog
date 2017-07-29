@@ -1,37 +1,30 @@
 <div class="row">
-<div class="col-xs-offset-5 col-xs-5">
-
-<div class="panel panel-default" >
-    <div class="panel-heading">
-        <div class="panel-title text-center">Login</div>
-    </div> 
-
-    <div class="panel-body" >
-        <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
-            
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <%= f.text_field :username, class: "form-control", placeholder: "Username", autofocus: true %>
+    <div class="col-xs-offset-5 col-xs-5">
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                <div class="panel-title text-center">Login</div>
+            </div> 
+            <div class="panel-body" >
+                <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <%= f.text_field :username, class: "form-control", placeholder: "Username", autofocus: true %>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <%= f.text_field :password, class: "form-control", placeholder: "Password", autofocus: true %>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <%= button_tag(type: "submit", class: "btn btn-primary pull-right") do %>
+                                <i class="glyphicon glyphicon-log-in"></i> Log in
+                            <% end %>
+                        </div>
+                    </div>
+                <% end %>
             </div>
-            <br>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <%= f.text_field :password, class: "form-control", placeholder: "Password", autofocus: true %>
-            </div>
-            <br>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <%= button_tag(type: "submit", class: "btn btn-primary pull-right") do %>
-                        <i class="glyphicon glyphicon-log-in"></i> Log in
-                    <% end %>
-
-                    <!-- <%= f.submit '<span class="glyphicon glyphicon-log-in"></span> Submit'.html_safe, class: 'btn btn-primary pull-right' %> -->
-                </div>
-            </div>
-        <% end %>
-
+        </div>
     </div>
-</div>
-
-</div>
 </div>
