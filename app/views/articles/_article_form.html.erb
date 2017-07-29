@@ -18,7 +18,12 @@
                     <%= f.label :content%>
                 </div>
                 <div class="col-sm-10">
-                    <%= f.cktext_area :content, rows:10, class:"form-control", placeholder: "Body of article", id: "article" %>
+                    <%= f.text_area :content, rows:10, class:"form-control", placeholder: "Body of article", id: "article" %>
+                    <script>
+                        CKEDITOR.replace( 'article', {
+                            extraPlugins: 'codesnippet'
+                        } );
+                    </script>
                 </div>
             </div>
 
