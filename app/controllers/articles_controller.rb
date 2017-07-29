@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :update, :show, :destroy]
+    before_action :require_admin, only: [:new]
 
     def index
         @articles = Article.paginate(page: params[:page], per_page: 1)
@@ -48,5 +49,12 @@ class ArticlesController < ApplicationController
 
     def articles_params
         params.require(:article).permit(:title, :content)
+    end
+
+    def require_admin
+        if logged_in? and !current_user.admin?
+            flash[:danger] = "Only admin users can perform that action"
+            redirect_to root_path
+        end
     end
 end
