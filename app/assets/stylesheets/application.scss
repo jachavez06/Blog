@@ -120,3 +120,20 @@ hr {
     -moz-border-radius: 0;
     border-radius: 0;
 }
+
+.jumbotron {
+    height: 600px;
+    width: inherit;
+
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/d7/00/a8/d700a86a551cb02b3d4b0d0ac3b4d37a.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    //background-color: #17234E;
+    //margin-bottom: 0;
+    //min-height: 50%;
+    //background-repeat: no-repeat;
+    //background-position: center;
+    //-webkit-background-size: inherit;
+    //background-size: inherit;
+}
