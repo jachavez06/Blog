@@ -8,6 +8,7 @@
 }
 .navbar-custom .navbar-brand {
   font-weight: 800;
+  font-size: 24px;
 }
 .navbar-custom .navbar-header .navbar-toggle {
   color: #777777;
@@ -17,15 +18,11 @@
 }
 .navbar-custom .nav li a {
   text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 @media only screen and (min-width: 768px) {
-  .navbar-custom {
-    background: transparent;
-    border-bottom: 1px solid transparent;
-  }
   .navbar-custom .navbar-brand {
     color: white;
     padding: 20px;
@@ -90,8 +87,8 @@
 .navbar .divider-vertical {
     height: 40px;
     margin: 9px 9px;
-    border-right: 1px solid #ffffff;
-    border-left: 1px solid #f2f2f2;
+    border-right: 1px solid #222222;
+    border-left: 1px solid #111111;
 }
 
 .navbar-inverse .divider-vertical {

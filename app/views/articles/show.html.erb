@@ -3,67 +3,64 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
 <div class="container">
-<div class="row">
-    <div class="col-xs-12">
-        <div class="">
-            <h1><%= @article.title %></h1>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        <div class="article-timestamps">
-            Published on: <%= @article.created_at.strftime('%B %d, %Y') %><br>
-            Updated on: <%= @article.updated_at.strftime('%B %d, %Y') %>
-        </div>
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-xs-12">
-        <div class="">
-            <%= @article.content.html_safe %>
-        </div>
-    </div>
-</div>
 
-<br>
-<div class="row">
-    <div class="col-xs-12">
-        <div class="">
-            <%= render "article_navigation" %>
-        </div>
-    </div>
-</div>
-
-<% if is_admin? %>
     <div class="row">
         <div class="col-xs-12">
-            <div class="pull-right">
-                <br>
-                <%= render "article_actions" %>
+            <div class="">
+                <h1 id="article-show-title"><%= @article.title %></h1>
             </div>
         </div>
     </div>
-<% end %>
 
-<div id="article-url" value="<%= request.original_url %>" style="display:none"></div>
-<div id="article-id" value="<%= @article.id %>" style="display:none"></div>
-<hr>
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-        this.page.url = document.getElementById("article-url").getAttribute("value"); 
-        this.page.identifier = document.getElementById("article-id").getAttribute("value");
-    };
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="article-timestamps">
+                Published on: <%= @article.created_at.strftime('%B %d, %Y') %><br>
+                Updated on: <%= @article.updated_at.strftime('%B %d, %Y') %>
+            </div>
+        </div>
+    </div>
 
-    (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://jchavez-code.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+    <hr>
 
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="">
+                <%= @article.content.html_safe %>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="">
+                <%= render "article_navigation" %>
+            </div>
+        </div>
+    </div>
+
+    <div id="article-url" value="<%= request.original_url %>" style="display:none"></div>
+    <div id="article-id" value="<%= @article.id %>" style="display:none"></div>
+    
+    <hr id="dark">
+
+    <div id="disqus_thread"></div>
+
+    <script>
+        var disqus_config = function () {
+            this.page.url = document.getElementById("article-url").getAttribute("value"); 
+            this.page.identifier = document.getElementById("article-id").getAttribute("value");
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://jchavez-code.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>

@@ -15,7 +15,6 @@ p {
   line-height: 1.5;
   margin: 30px 0;
 }
-
 h1,
 h2,
 h3,
@@ -25,15 +24,12 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
-
 hr.small {
   max-width: 100px;
   margin: 15px auto;
   border-width: 4px;
   border-color: white;
 }
-
-
 .post-preview > a {
   color: #333333;
 }
@@ -99,7 +95,6 @@ footer .copyright {
   text-align: center;
   margin-bottom: 0;
 }
-
 ::-moz-selection {
   color: white;
   text-shadow: none;
@@ -121,4 +116,6 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #0085A1;
 }
-
+#dark {
+  border-top: 1px solid #b2acac;
+}

@@ -33,7 +33,6 @@
        border-bottom: 1px solid #ffffff;
 }
 */
-
 .cliente {
 	border: #cdcdcd medium solid;
 	border-radius: 10px;
@@ -43,15 +42,12 @@
 .article-timestamps {
     color: gray;
     margin-top: -10px;
+    font-size: 14px;
+    margin-left: 5px;
 }
-
-* html .digg_pagination {
-    height: 1%; 
+.copyright {
+    font-size: 14px;
+    text-align: center;
+    color: gray;
+    padding-bottom: 5px;
 }
-
-*:first-child + html .digg_pagination {
-    overflow: hidden; 
-}
-/* end pagination rules */ 
-
-

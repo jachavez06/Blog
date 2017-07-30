@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <%= form_for(@article, :html => {class: "form-horizontal", role: "form" }) do |f| %>
             <div class="form-group"> 
-                <div class="control-label col-sm-1"> 
+                <div class="control-label col-sm-2"> 
                     <%= f.label :title %>
                 </div>
                 <div class="col-sm-10">
@@ -14,7 +14,7 @@
             </div>
 
             <div class="form-group"> 
-                <div class="control-label col-sm-1"> 
+                <div class="control-label col-sm-2"> 
                     <%= f.label :content%>
                 </div>
                 <div class="col-sm-10">
@@ -27,10 +27,12 @@
                     </script>
                 </div>
             </div>
+
             <hr>
+
             <h2>Meta-data</h2>
             <div class="form-group"> 
-                <div class="control-label col-sm-1"> 
+                <div class="control-label col-sm-2"> 
                     <%= f.label :Title %>
                 </div>
                 <div class="col-sm-10">
@@ -39,7 +41,7 @@
             </div>
 
             <div class="form-group"> 
-                <div class="control-label col-sm-1"> 
+                <div class="control-label col-sm-2"> 
                     <%= f.label :Description %>
                 </div>
                 <div class="col-sm-10">
@@ -48,7 +50,7 @@
             </div>
 
             <div class="form-group"> 
-                <div class="control-label col-sm-1"> 
+                <div class="control-label col-sm-2"> 
                     <%= f.label :Keywords %>
                 </div>
                 <div class="col-sm-10">
@@ -57,8 +59,8 @@
             </div>
 
             <div class="form-group">
-                <div class="col-sm-offset-1 col-sm-10">
-                    <%= f.submit class: 'btn btn-primary btn-md' %>
+                <div class="col-sm-12">
+                    <%= f.submit class: 'btn btn-primary pull-right' %>
                 </div>
             </div>
 
