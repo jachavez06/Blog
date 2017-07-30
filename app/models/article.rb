@@ -1,6 +1,13 @@
 class Article < ApplicationRecord
-    validates :title, presence: true, length: {minimum:3, maximum:50}
-    validates :content, presence:true, length: {minimum: 10} 
+    # Body
+    validates :title, presence: true, :uniqueness => {:case_sensitive => false}, length: {minimum:3, maximum:50}
+    validates :content, presence: true, length: {minimum: 10} 
+    
+    # Meta-data
+    @keyword_regex = /\A([a-z]+)(,\s*[a-z]+)*\z/i
+    validates :meta_data_title, presence: true, :uniqueness => {:case_sensitive => false}
+    validates :meta_data_description, presence: true
+    validates :meta_data_keywords, presence: true, :format => { :with => @keyword_regex, :message => "Invalid keyword format." }
 
     after_create :update_slug
     before_update :assign_slug 
