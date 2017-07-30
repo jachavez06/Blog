@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :update, :show, :destroy]
     before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
+    before_action :no_index, only: [:new, :edit]
 
     def index
         @articles = Article.paginate(page: params[:page], per_page: 1)
@@ -61,5 +62,9 @@ class ArticlesController < ApplicationController
             flash[:danger] = "Only admin users can perform that action"
             redirect_to root_path
         end
+    end
+
+    def no_index
+        set_meta_tags nofollow: true    
     end
 end

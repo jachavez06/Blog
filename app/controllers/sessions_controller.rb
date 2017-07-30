@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    before_action :no_index, only: [:new]
+
     def new
         
     end 
@@ -19,5 +21,11 @@ class SessionsController < ApplicationController
         session[:user_id] = nil
         flash[:success] = "You have logged out."
         redirect_to root_path
-    end 
+    end
+
+    private
+    def no_index
+        set_meta_tags nofollow: true    
+    end
+
 end
