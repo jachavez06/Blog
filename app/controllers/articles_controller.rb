@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
 
     def index
         @articles = Article.paginate(page: params[:page], per_page: 1)
+        set_meta_tags description: 'A list of all the tutorials I have written.'
+        set_meta_tags keywords: 'Blog, Code, Tutorial, Guide, Example, Program'
     end 
 
     def new
