@@ -30,6 +30,7 @@ class ArticlesController < ApplicationController
         set_meta_tags title: @article.meta_data_title
         set_meta_tags description: @article.meta_data_description
         set_meta_tags keywords: @article.meta_data_keywords
+        set_meta_tags canonical: request.original_url
     end 
 
     def update
@@ -51,6 +52,10 @@ class ArticlesController < ApplicationController
     
     def set_article
         @article = Article.find_by_slug(params[:id])
+        if @article == nil 
+            redirect_to articles_path
+        end
+
     end 
 
     def articles_params
