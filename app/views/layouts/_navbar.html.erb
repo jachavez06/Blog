@@ -1,4 +1,5 @@
-<nav class="navbar navbar-inverse">
+<!--
+<nav class="navbar navbar-inverse navbar-custom">
   
   <div class="container-fluid">
     
@@ -11,7 +12,7 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <% if logged_in? %>
         <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span> Logout'.html_safe, logout_path, method: :delete %></li>
       <% else %>
@@ -22,3 +23,36 @@
   </div>
 
 </nav>
+-->
+
+ <nav class="navbar navbar-default navbar-custom">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <%= link_to 'Home', root_path(), class: "navbar-brand" %>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <%= link_to 'Articles', articles_path() %>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li>
+                        <% if logged_in? %>
+                            <%= link_to '<span class="glyphicon glyphicon-log-out"></span> Logout'.html_safe, logout_path, method: :delete %>
+                        <% else %>
+                            <%= link_to '<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, login_path() %>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
