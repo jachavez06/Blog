@@ -21,8 +21,9 @@
                     <%= f.text_area :content, rows:10, class:"form-control", placeholder: "Body of article", id: "article" %>
                     <script>
                         CKEDITOR.replace( 'article', {
-                            extraPlugins: 'codesnippet'
-                        } );
+                            extraPlugins: 'codesnippet',
+                            codeSnippet_theme: 'googlecode'
+                        });
                     </script>
                 </div>
             </div>
