@@ -1,10 +1,10 @@
 .intro-header {
-  background-color: #777777;
-  background: no-repeat center center;
-  background-attachment: scroll;
+  background-image: image-url("cover-image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size: cover;
   -o-background-size: cover;
   margin-bottom: 50px;
 }
