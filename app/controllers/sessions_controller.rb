@@ -2,7 +2,10 @@ class SessionsController < ApplicationController
     before_action :no_index, only: [:new]
 
     def new
-        
+        respond_to do |format|
+            format.html
+            format.js
+        end
     end 
     
     def create
