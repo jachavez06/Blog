@@ -1,14 +1,10 @@
 <div class="container">
     <div class="row">
         <!-- Article body -->
-        <div class="col-xs-10">
+        <div class="col-10">
             <h1 id="article-show-title"><%= @article.title %></h1>
-            <div class="article-timestamps">
-                Published on: <%= @article.created_at.strftime('%B %d, %Y') %><br>
-                Updated on: <%= @article.updated_at.strftime('%B %d, %Y') %>
-            </div>
-            <hr id="article-title-body-separator">
-            <div class="">
+            <hr class="article-list-title-divider">
+            <div id="article-show-body" class="">
                 <%= @article.content.html_safe %>
             </div>
             <div class="">
@@ -16,14 +12,18 @@
             </div>
             <div id="article-url" value="<%= request.original_url %>" style="display:none"></div>
             <div id="article-id" value="<%= @article.id %>" style="display:none"></div>
-            <hr id="dark">
+            <hr>
             <div id="disqus_thread"></div>
         </div>
 
         <!-- Sidebar -->
-        <div class="col-xs-2">
+        <div class="col-2">
             <div id="article-show-sidebar">
-                adsf
+                <h3>Article Information</h3>
+                <div class="article-timestamps">
+                    Published on: <%= @article.created_at.strftime('%B %d, %Y') %><br>
+                    Updated on: <%= @article.updated_at.strftime('%B %d, %Y') %>
+                </div>
             </div>
         </div>
     </div>
