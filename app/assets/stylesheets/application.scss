@@ -11,30 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  */
-//= require_self
-//= require_tree .
-
-@import "bootstrap-sprockets";
+ 
 @import "bootstrap";
-
-.cliente {
-	border: #cdcdcd medium solid;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 800;
-}
-code{
-  background: transparent !important;
-}
-.alert{
-  margin-top: 10px;
-}
+@import "welcome";
+@import "global";
+@import "article";

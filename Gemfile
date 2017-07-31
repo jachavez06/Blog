@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'rails-assets-tether', '>= 1.3.3', source: 'https://rails-assets.org'
 gem 'pg'
 gem 'will_paginate', '3.1.5'
 gem 'ckeditor', github: 'galetahub/ckeditor'

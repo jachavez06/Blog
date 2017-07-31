@@ -13,11 +13,23 @@
     font-size: 14px;
     margin-left: 8px;
 }
+.article-index-header {
+    margin-top: 100px;
+}
+.article-list-title-divider{
+    margin-top: 5px !important;
+    margin-bottom: 40px !important;
+}
 #article-show-title{
     font-size: 42px;
+    margin-top: 100px;
 }
 #article-title-body-separator{
     margin-top: 5px;
     margin-bottom: 15px;
     border-top: 1px solid black;
+}
+#article-show-sidebar{
+    margin-top: 50px;
+    border-left: 1px solid black;
 }
