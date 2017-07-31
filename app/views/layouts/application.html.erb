@@ -3,6 +3,7 @@
   <head>
     <%= csrf_meta_tags %>
     <%= display_meta_tags site: "Jesus Chavez Guides" %>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <% if Rails.env.production? %>
