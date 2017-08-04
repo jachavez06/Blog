@@ -1,4 +1,3 @@
-<script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
 
 <%= render 'shared/errors', obj: @article %>
 
@@ -13,6 +12,9 @@
                     <%= f.label :content%>
 
                     <%= f.text_area :content, rows: 10, class:"form-control", placeholder: "Body of article", id: "article", name: "article" %>
+                    <script>
+                        CKEDITOR.replace('article');
+                    </script>
             </div>
             <hr>
             <h2>Meta-data</h2>
