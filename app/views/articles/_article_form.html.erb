@@ -1,5 +1,5 @@
 
-<%= javascript_include_tag :ckeditor %>
+<%= javascript_include_tag Ckeditor.cdn_url %>
 <%= render 'shared/errors', obj: @article %>
 
 <div class="row">
@@ -12,7 +12,7 @@
             <div class="form-group"> 
                     <%= f.label :content%>
 
-                    <%= f.cktext_area :content, rows:10, class:"form-control", placeholder: "Body of article", id: "article" %>
+                    <%= f.cktext_area :content, rows: 10, class:"form-control", placeholder: "Body of article", id: "article" %>
                     <script>
                         CKEDITOR.replace( 'article' );
                     </script>
