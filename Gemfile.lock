@@ -60,9 +60,6 @@ GEM
       xpath (~> 2.0)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
-    ckeditor (4.2.4)
-      cocaine
-      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -112,7 +109,6 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
-    orm_adapter (0.5.0)
     paperclip (5.1.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -215,7 +211,6 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.alpha6)
   byebug
   capybara (~> 2.13)
-  ckeditor
   coffee-rails (~> 4.2)
   exception_handler
   jbuilder (~> 2.5)

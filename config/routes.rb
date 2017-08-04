@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor' # Articles
   root 'welcome#index'  
   resources :articles 
   get 'login', to: 'sessions#new'

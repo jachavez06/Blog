@@ -11,10 +11,7 @@
             <div class="form-group"> 
                     <%= f.label :content%>
 
-                    <%= f.text_area :content, rows: 10, class:"form-control", placeholder: "Body of article", id: "article", name: "article" %>
-                    <script>
-                        CKEDITOR.replace('article');
-                    </script>
+                    <%= f.text_area :content, rows: 10, class:"form-control", placeholder: "Body of article", id: "article" %>
             </div>
             <hr>
             <h2>Meta-data</h2>
