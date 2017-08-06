@@ -1,4 +1,5 @@
 
+<%= javascript_include_tag Ckeditor.cdn_url %>
 <%= render 'shared/errors', obj: @article %>
 
 <div class="row">
@@ -11,7 +12,7 @@
             <div class="form-group"> 
                     <%= f.label :content%>
 
-                    <%= f.text_area :content, rows: 10, class:"form-control", placeholder: "Body of article", id: "article" %>
+                    <%= f.cktext_area :content, rows: 10, class:"form-control", placeholder: "Body of article", id: "article" %>
             </div>
             <hr>
             <h2>Meta-data</h2>
