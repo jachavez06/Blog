@@ -1,1 +1,7 @@
-<%= Rouge::Themes::Github.render(:scope => '.highlight, code') %>
+<%= Rouge::Themes::Base16.render(:scope => '.highlight') %>
+
+.highlight {
+  background-color: #f7f7f9;
+  padding: .5rem;
+  margin: 1rem;
+}
