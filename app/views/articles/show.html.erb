@@ -5,7 +5,8 @@
             <h1 id="article-show-title"><%= @article.title %></h1>
             <hr class="article-list-title-divider">
             <div id="article-show-body" class="">
-                <%= @article.content.html_safe %>
+                <%= raw rouge_markdown(@article.content) %>
+                
             </div>
             <div class="">
                 <%= render "article_navigation" %>

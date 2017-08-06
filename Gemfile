@@ -19,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'ckeditor' 
 gem 'paperclip'
+gem 'redcarpet'
+gem 'rouge'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
