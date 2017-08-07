@@ -57,4 +57,5 @@ Ckeditor.setup do |config|
   # Used when CKEditor CDN enabled
   # By default: "ckeditor/config.js"
   config.js_config_url = 'ckeditor/config.js'
+  config.assets_pipeline_enabled = true
 end
