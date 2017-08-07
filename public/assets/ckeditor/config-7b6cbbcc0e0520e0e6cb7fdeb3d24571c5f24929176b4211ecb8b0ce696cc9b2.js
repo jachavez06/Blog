@@ -3,6 +3,6 @@ CKEDITOR.editorConfig = function (config) {
     config.removeFormatAttributes = '';
     config.entities = false;
     config.height = 500; 
-    config.extraPlugins = 'codemirror,preview';
+    config.extraPlugins = 'codemirror';
 }
 ;
