@@ -15,5 +15,4 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require ckeditor/config.js
 //= require_tree .
