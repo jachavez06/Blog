@@ -4,5 +4,6 @@ CKEDITOR.editorConfig = function (config) {
     config.entities = false;
     config.height = 500; 
     config.extraPlugins = 'codemirror';
-    config.contentsCss = '/assets/ckeditor/contents.scss';
+    config.contentsCss = 'assets/stylesheets/application.scss' ;
 }
+;
