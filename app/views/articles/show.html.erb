@@ -5,7 +5,7 @@
             <h1 id="article-show-title"><%= @article.title %></h1>
             <hr class="article-list-title-divider">
             <div id="article-show-body" class="">
-                <%= raw rouge_markdown(@article.content.html_safe) %>
+                <%= @article.content.html_safe %>
                 
             </div>
             <div class="">

@@ -1,0 +1,1 @@
+CKEDITOR.plugins.setLang("codemirror","th",{toolbar:"\u0e14\u0e39\u0e23\u0e2b\u0e31\u0e2a HTML",searchCode:"Search Source",autoFormat:"Format Selection",commentSelectedRange:"Comment Selection",uncommentSelectedRange:"Uncomment Selection",autoCompleteToggle:"Enable/Disable HTML Tag Autocomplete"});
