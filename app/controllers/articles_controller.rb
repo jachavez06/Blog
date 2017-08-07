@@ -7,6 +7,11 @@ class ArticlesController < ApplicationController
         @articles = Article.where(:published => true).paginate(page: params[:page], per_page: 10)
         set_meta_tags description: 'A list of all the tutorials I have written.'
         set_meta_tags keywords: 'Blog, Code, Tutorial, Guide, Example, Program'
+
+        if is_admin?
+            @unpublished = Article.where(:published => false)
+        end
+
     end 
 
     def new
