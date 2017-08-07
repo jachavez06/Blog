@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     end 
     
     def create
-        @article = Article.new(articles_params.merge(published: true)) if publishing?
+        @article = Article.new(articles_params.merge(published: true, created_at: Time.zone.now, updated_at: Time.zone.now)) if publishing?
         
         if @article.save
 		    flash[:success] = "Article was successfully created!"
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
     end 
 
     def update
-        @article.assign_attributes(articles_params.merge(published: true)) if publishing?
+        @article.assign_attributes(articles_params.merge(published: true, created_at: Time.zone.now, updated_at: Time.zone.now)) if publishing?
         @article.assign_attributes(articles_params.merge(published: false)) if unpublishing?
 
         if @article.changed?
@@ -66,7 +66,7 @@ class ArticlesController < ApplicationController
     
     def set_article
         @article = Article.find_by_slug(params[:id])
-        if @article == nil 
+        if @article == nil || (@article.published == false and !logged_in?) || (@article.published == false and !is_admin?) 
             redirect_to articles_path
         end
 
@@ -77,7 +77,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_admin
-        if logged_in? and !current_user.admin?
+        if logged_in? and !is_admin?
             flash[:danger] = "Only admin users can perform that action"
             redirect_to root_path
         end
