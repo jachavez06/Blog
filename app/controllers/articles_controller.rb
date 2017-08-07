@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
     before_action :no_index, only: [:new, :edit]
 
     def index
-        @articles = Article.paginate(page: params[:page], per_page: 10)
+        @articles = Article.where(:published => true).paginate(page: params[:page], per_page: 10)
         set_meta_tags description: 'A list of all the tutorials I have written.'
         set_meta_tags keywords: 'Blog, Code, Tutorial, Guide, Example, Program'
     end 
@@ -14,7 +14,8 @@ class ArticlesController < ApplicationController
     end 
     
     def create
-        @article = Article.new(articles_params)
+        @article = Article.new(articles_params.merge(published: true)) if publishing?
+        
         if @article.save
 		    flash[:success] = "Article was successfully created!"
 		    redirect_to article_path(@article) 
@@ -34,11 +35,19 @@ class ArticlesController < ApplicationController
     end 
 
     def update
-        if @article.update (articles_params)
-            flash[:success] = "Article was successfully updated!"
-            redirect_to article_path(@article)
+        @article.assign_attributes(articles_params.merge(published: true)) if publishing?
+        @article.assign_attributes(articles_params.merge(published: false)) if unpublishing?
+
+        if @article.changed?
+            if @article.save
+                flash[:success] = "Article was successfully updated!"
+                redirect_to article_path(@article)
+            else 
+                render 'edit'
+            end
         else 
-            render 'edit'
+            flash[:info] = "Article was not updated because no changes were made!"
+            redirect_to article_path(@article)
         end 
     end 
 
@@ -71,5 +80,13 @@ class ArticlesController < ApplicationController
 
     def no_index
         set_meta_tags nofollow: true    
+    end
+
+    def publishing?
+      params[:commit] == "Publish"
+    end
+
+    def unpublishing?
+      params[:commit] == "Unpublish"
     end
 end
