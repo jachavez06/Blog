@@ -24,9 +24,10 @@
                 <div class="card-block">
                     <p class="card-text" id="article-show-sidebar-timestamps">
                         <i class="fa fa-newspaper-o" aria-hidden="true"></i> <%= @article.created_at.strftime('%B %d, %Y') %><br>
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= @article.updated_at.strftime('%B %d, %Y') %>
-                        </p>
-                    </h6>
+                        <% if @article.created_at.to_i != @article.updated_at.to_i %>
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= @article.updated_at.strftime('%B %d, %Y') %>
+                        <% end %>
+                    </p>
                 </div>
             </div>
         </div>
