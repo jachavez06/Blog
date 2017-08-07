@@ -1,0 +1,1 @@
+CKEDITOR.editorConfig=function(i){i.entities=!1};
