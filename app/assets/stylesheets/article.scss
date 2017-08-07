@@ -8,8 +8,7 @@
     font-size: 14px;
 }
 .article-timestamps {
-    color: gray;
-    font-size: 12px;
+    font-size: 14px;
 }
 .article-list-title-divider{
     margin-top: 5px !important;
@@ -28,6 +27,13 @@
     border-top: 1px solid black;
 }
 #article-show-sidebar{
-    margin-top: 50px;
-    //border-left: 1px solid black;
+    margin-top: 100px;
+}
+#article-show-sidebar-title{
+    font-family: 'Lora';
+    font-size: 1.5rem;
+}
+#article-show-sidebar-timestamps{
+    margin-left: 2.5rem;
+    color: #2d2d2d;
 }

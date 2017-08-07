@@ -1,3 +1,16 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -11215,37 +11228,26 @@ h6 {
 
 /* line 17, /Volumes/Colosseum/Code/Ruby/Blog/app/assets/stylesheets/article.scss */
 #article-show-title {
+  font-family: 'Lora';
   font-size: 42px;
   margin-top: 100px;
 }
 
-/* line 21, /Volumes/Colosseum/Code/Ruby/Blog/app/assets/stylesheets/article.scss */
+/* line 22, /Volumes/Colosseum/Code/Ruby/Blog/app/assets/stylesheets/article.scss */
 #article-show-body {
   padding: 0 10px;
 }
 
-/* line 24, /Volumes/Colosseum/Code/Ruby/Blog/app/assets/stylesheets/article.scss */
+/* line 25, /Volumes/Colosseum/Code/Ruby/Blog/app/assets/stylesheets/article.scss */
 #article-title-body-separator {
   margin-top: 5px;
   margin-bottom: 15px;
   border-top: 1px solid black;
 }
 
-/* line 29, /Volumes/Colosseum/Code/Ruby/Blog/app/assets/stylesheets/article.scss */
+/* line 30, /Volumes/Colosseum/Code/Ruby/Blog/app/assets/stylesheets/article.scss */
 #article-show-sidebar {
   margin-top: 100px;
-}
-
-/* line 32, /Volumes/Colosseum/Code/Ruby/Blog/app/assets/stylesheets/article.scss */
-#article-show-sidebar-title {
-  font-family: 'Lora';
-  font-size: 1.5rem;
-}
-
-/* line 36, /Volumes/Colosseum/Code/Ruby/Blog/app/assets/stylesheets/article.scss */
-#article-show-sidebar-timestamps {
-  margin-left: 2.5rem;
-  color: #2d2d2d;
 }
 
 /* pagination rules */

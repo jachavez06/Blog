@@ -1,35 +1,34 @@
-
-
 <%= render 'shared/errors', obj: @article %>
 
-<div class="row">
-    <div class="col-12">
-        <%= form_for(@article, :html => {class: "form-horizontal", role: "form" }) do |f| %>
-            <div class="form-group"> 
+    <div class="row">
+        <div class="col-12">
+            <%= form_for(@article, :html => {class: "form-horizontal", role: "form" }) do |f| %>
+                <div class="form-group">
                     <%= f.label :title %>
-                    <%= f.text_field :title, class:"form-control", placeholder: "Title of Article", autofocus:true %>
-            </div>
-            <div class="form-group"> 
+                        <%= f.text_field :title, class:"form-control", placeholder: "Title of Article", autofocus:true %>
+                </div>
+                <div class="form-group">
                     <%= f.label :content%>
-                    <%= f.cktext_area :content, rows: 50, class:"form-control", placeholder: "Body of article", id: "article" %>
-            </div>
-            <hr>
-            <h2>Meta-data</h2>
-            <div class="form-group"> 
-                <%= f.label :Title %>
-                <%= f.text_field :meta_data_title, class:"form-control", placeholder: "Title", autofocus:true %>
-            </div>
-            <div class="form-group"> 
-                <%= f.label :Description %>
-                <%= f.text_field :meta_data_description, class:"form-control", placeholder: "Description", autofocus:true %>
-            </div>
-            <div class="form-group"> 
-                <%= f.label :Keywords %>
-                <%= f.text_field :meta_data_keywords, class:"form-control", placeholder: "Keywords", autofocus:true %>
-            </div>
-            <div class="form-group">
-                <%= f.submit class: 'btn btn-primary float-sm-right' %>
-            </div>
-        <% end %>
+                        <%= f.cktext_area :content, rows: 50, class:"form-control", placeholder: "Body of article", id: "article" %>
+                </div>
+                <hr>
+                <h2>Meta-data</h2>
+                <div class="form-group">
+                    <%= f.label :Title %>
+                        <%= f.text_field :meta_data_title, class:"form-control", placeholder: "Title", autofocus:true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :Description %>
+                        <%= f.text_field :meta_data_description, class:"form-control", placeholder: "Description", autofocus:true %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :Keywords %>
+                        <%= f.text_field :meta_data_keywords, class:"form-control", placeholder: "Keywords", autofocus:true %>
+                </div>
+                <div class="float-sm-right">
+                    <%= f.submit class: 'btn btn-primary ' %>
+                    <%= link_to "Cancel", article_path(@article), class: "btn btn-secondary" %>
+                </div>
+                <% end %>
+        </div>
     </div>
-</div>

@@ -6,7 +6,7 @@
             <hr class="article-list-title-divider">
             <div id="article-show-body" class="">
                 <%= @article.content.html_safe %>
-                
+                <br />
             </div>
             <div class="">
                 <%= render "article_navigation" %>
@@ -19,16 +19,14 @@
 
         <!-- Sidebar -->
         <div class="col-3">
-            <div class="card">
+            <div class="card card-outline-secondary" id="article-show-sidebar">
+                <h3 class="card-header" id="article-show-sidebar-title">About This Article</h3>
                 <div class="card-block">
-                    This is some text within a card block.
-                </div>
-            </div>
-            <div id="article-show-sidebar">
-                <h3>About This Article:</h3>
-                <div class="article-timestamps">
-                    Published on: <%= @article.created_at.strftime('%B %d, %Y') %><br>
-                    Updated on: <%= @article.updated_at.strftime('%B %d, %Y') %>
+                    <p class="card-text" id="article-show-sidebar-timestamps">
+                        <i class="fa fa-newspaper-o" aria-hidden="true"></i> <%= @article.created_at.strftime('%B %d, %Y') %><br>
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= @article.updated_at.strftime('%B %d, %Y') %>
+                        </p>
+                    </h6>
                 </div>
             </div>
         </div>
