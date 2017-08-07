@@ -27,7 +27,7 @@
                 </div>
                 <div class="float-sm-right">
                     <%= f.submit class: 'btn btn-primary ' %>
-                    <%= link_to "Cancel", article_path(@article), class: "btn btn-secondary" %>
+                    <%= link_to "Cancel", request.referer.present? ? request.referer : default_path, class: "btn btn-secondary" %>
                 </div>
                 <% end %>
         </div>
