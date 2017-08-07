@@ -26,6 +26,8 @@
     margin-bottom: 15px;
     border-top: 1px solid black;
 }
+
+// Sidebar
 #article-show-sidebar{
     margin-top: 100px;
 }
@@ -34,6 +36,8 @@
     font-size: 1.5rem;
 }
 #article-show-sidebar-timestamps{
-    margin-left: 2.5rem;
+    //margin-left: 2.5rem;
     color: #2d2d2d;
+    word-wrap: break-word;
+    overflow: hidden;
 }
