@@ -59,3 +59,42 @@ But even good concerns present software design problems. Concerns are a bit hard
 Finally, it’s hard to say what problem concerns solve. Every problem that concerns solve can be solved with composition or aggregation. Better than that, composition/aggregation solve the same problem but explicitly.
 
 TL;DR= Concerns for code shared between controllers or between models. 
+
+
+###
+
+30
+down vote
+accepted
+Classes are also objects in Ruby, so they can have their own instance variables which are called class instance variables.
+
+@@world is a class variable
+@insworld is a class instance variable
+#index is an instance method
+When you try to access @insworld in #index, Ruby searches for the instance variable in the A object (meaning A.new) because #index is an instance method.
+
+But you defined @insworld as a class instance variable which means it is defined in the class object itself (meaning A).
+
+The following code demonstrates:
+
+class Hi
+  @@a = 1 # class variable
+  @b  = 2 # class instance variable
+
+  def initialize
+    @c = 3 # instance variable
+  end
+
+  def test # instance method, works on objects of class Hi
+    puts @@a # => 1
+    puts @b  # => nil, there is no instance variable @b
+    puts @c  # => 3 # we defined this instance variable in the initializer
+  end
+end
+
+Hi.class_variables        # => @@a
+Hi.instance_variables     # => @b
+Hi.new.instance_variables # => @c
+# Hi is an object of class Class
+# Hi.new is an object of class Hi
+Keep in mind that all instance variables return nil if they don't exist.

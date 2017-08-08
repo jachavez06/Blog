@@ -4,6 +4,9 @@ class ArticlesController < ApplicationController
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
 
+  @no_changes_made = 'Article was not updated because no changes were made!'
+  @updated = 'Article was successfully updated!'
+
   def index
     @articles = Article.where(published: true).paginate(page: params[:page],
                                                         per_page: 10)
@@ -18,11 +21,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    if publishing?
-      @article = Article.new(articles_params.merge(published: true,
-                                                   created_at: Time.zone.now,
-                                                   updated_at: Time.zone.now))
-    end
+    @article.make_publishable(articles_params) if publishing?
 
     if @article.save
       flash[:success] = 'Article was successfully created!'
@@ -42,24 +41,15 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    #if publishing?
-    #  @article.assign_attributes(articles_params.merge(published: true,
-    #                                                   created_at: Time.zone.now,
-    #                                                   updated_at: Time.zone.now))
-    #end
-
-    @article.assign_attributes(articles_params.merge(published: false)) if unpublishing?
-
-    if @article.changed?
-      if @article.save
-        flash[:success] = 'Article was successfully updated!'
-        redirect_to article_path(@article)
-      else
-        render 'edit'
-      end
-    else
-      flash[:info] = 'Article was not updated because no changes were made!'
+    @article.make_publishable(articles_params) if publishing?
+    @article.make_unpublishable if unpublishing?
+    # Next line adds to cyclomatic complexity but shortens block to acceptable
+    (flash[:info] = @no_changes_made) && render('edit') unless @article.changed?
+    if @article.save
+      flash[:success] = 'Article was successfully updated!'
       redirect_to article_path(@article)
+    else
+      render 'edit'
     end
   end
 
@@ -75,7 +65,7 @@ class ArticlesController < ApplicationController
     @article = Article.find_by_slug(params[:id])
     # When to redirect?
     # if article is nil
-    return unless @article.nill?
+    return unless @article.nil?
     # if article is unpublished and not logged in
     return unless (!@article.published && !logged_in?) || \
                   (!@article.published && !admin?)
