@@ -109,3 +109,6 @@ stuff - a local variable
 @stuff - an object variable (one per object)
 @@stuff - a class variable (just one for a whole class of objects)
 $stuff - a global variable (just one for the program)
+
+# returns if something is false
+return unless <something></something>

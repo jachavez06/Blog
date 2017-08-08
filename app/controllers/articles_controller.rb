@@ -1,5 +1,7 @@
 # Controller for articles to be published.
 class ArticlesController < ApplicationController
+  include Lookupable
+  
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
@@ -61,15 +63,19 @@ class ArticlesController < ApplicationController
 
   private
 
+  # Load article if it exists in db. 
   def set_article
-    @article = Article.find_by_slug(params[:id])
-    # When to redirect?
-    # if article is nil
-    return unless @article.nil?
-    # if article is unpublished and not logged in
-    return unless (!@article.published && !logged_in?) || \
-                  (!@article.published && !admin?)
-    redirect_to articles_path
+    slug = params[:id]
+
+    if article_exists?(slug)
+      article = Article.find_by_slug(slug)
+      if admin? || article_published?(article)
+          @article = article
+          return
+      end
+    end
+
+    redirect_to article_path
   end
 
   def articles_params
