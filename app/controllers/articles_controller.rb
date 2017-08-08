@@ -1,10 +1,12 @@
+# Controller for articles to be published.
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
 
   def index
-    @articles = Article.where(published: true).paginate(page: params[:page], per_page: 10)
+    @articles = Article.where(published: true).paginate(page: params[:page],
+                                                        per_page: 10)
     set_meta_tags description: 'A list of all the tutorials I have written.'
     set_meta_tags keywords: 'Blog, Code, Tutorial, Guide, Example, Program'
 
@@ -16,7 +18,11 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(articles_params.merge(published: true, created_at: Time.zone.now, updated_at: Time.zone.now)) if publishing?
+    if publishing?
+      @article = Article.new(articles_params.merge(published: true,
+                                                   created_at: Time.zone.now,
+                                                   updated_at: Time.zone.now))
+    end
 
     if @article.save
       flash[:success] = 'Article was successfully created!'
@@ -36,7 +42,11 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article.assign_attributes(articles_params.merge(published: true, created_at: Time.zone.now, updated_at: Time.zone.now)) if publishing?
+    if publishing?
+      @article.assign_attributes(articles_params.merge(published: true,
+                                                       created_at: Time.zone.now,
+                                                       updated_at: Time.zone.now))
+    end
     @article.assign_attributes(articles_params.merge(published: false)) if unpublishing?
 
     if @article.changed?
@@ -68,7 +78,8 @@ class ArticlesController < ApplicationController
   end
 
   def articles_params
-    params.require(:article).permit(:title, :content, :meta_data_title, :meta_data_description, :meta_data_keywords)
+    params.require(:article).permit(:title, :content, :meta_data_title,
+                                    :meta_data_description, :meta_data_keywords)
   end
 
   def require_admin
