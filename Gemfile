@@ -45,6 +45,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Static code analyzer
   gem 'rubocop', '~> 0.49.1', require: false
+  # Optimization
+  gem 'bullet'
+  # Routes
+  gem 'traceroute'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
