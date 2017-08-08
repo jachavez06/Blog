@@ -26,3 +26,7 @@ flay
 "Code that flay reports as similar is a good candidate for refactoring."
 
 "FLOG: scores above 20 indicate the method may need refactoring, and above 60 is dangerous. "
+
+
+
+Note that size: size is equivalent to :size => size.

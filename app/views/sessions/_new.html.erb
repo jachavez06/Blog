@@ -5,7 +5,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Login</h5>
       </div>
       <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path, :remote => true )do |f| %>
-      <div class="modal-body">  
+      <div class="modal-body">
         <div id="errors">
         </div>
         <div class="input-group">
@@ -14,9 +14,8 @@
         <br>
         <div class="input-group">
             <%= f.password_field :password, class: "form-control", placeholder: "Password", autofocus: true %>
-        </div>         
+        </div>
       </div>
-
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <%= f.submit 'Submit', class: 'btn btn-primary' %>

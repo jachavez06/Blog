@@ -2,7 +2,7 @@
  <% if is_admin? %>
 
     <div class="float-sm-right">
-        <%= render "article_actions" %>
+        <%= render "article_actions", :article_id => article.id   %>
     </div>
 
 <% end %>

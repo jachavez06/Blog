@@ -2,14 +2,16 @@
     <div class="row">
         <!-- Article body -->
         <div class="col col-md-8">
-            <h1 id="article-show-title"><%= @article.title %></h1>
+            <h1 id="article-show-title">
+                <%= @article.title %>
+            </h1>
             <hr class="article-list-title-divider">
             <div id="article-show-body" class="">
                 <%= @article.content.html_safe %>
-                <br />
+                    <br />
             </div>
             <div class="">
-                <%= render "article_navigation" %>
+                <%= render "article_navigation", :article => @article %>
             </div>
             <div id="article-url" value="<%= request.original_url %>" style="display:none"></div>
             <div id="article-id" value="<%= @article.id %>" style="display:none"></div>
@@ -23,10 +25,12 @@
                 <h3 class="card-header" id="article-show-sidebar-title">About This Article</h3>
                 <div class="card-block">
                     <p class="card-text" id="article-show-sidebar-timestamps">
-                        <i class="fa fa-newspaper-o" aria-hidden="true" title="Published on"></i> <%= @article.created_at.strftime('%B %d, %Y') %><br>
-                        <% if @article.created_at.to_i != @article.updated_at.to_i %>
-                            <i class="fa fa-pencil-square-o" aria-hidden="true" title="Updated on"></i> <%= @article.updated_at.strftime('%B %d, %Y') %>
-                        <% end %>
+                        <i class="fa fa-newspaper-o" aria-hidden="true" title="Published on"></i>
+                        <%= @article.created_at.strftime('%B %d, %Y') %><br>
+                            <% if @article.created_at.to_i != @article.updated_at.to_i %>
+                                <i class="fa fa-pencil-square-o" aria-hidden="true" title="Updated on"></i>
+                                <%= @article.updated_at.strftime('%B %d, %Y') %>
+                                    <% end %>
                     </p>
                 </div>
             </div>
@@ -35,12 +39,13 @@
 
     <script>
         var disqus_config = function () {
-            this.page.url = document.getElementById("article-url").getAttribute("value"); 
+            this.page.url = document.getElementById("article-url").getAttribute("value");
             this.page.identifier = document.getElementById("article-id").getAttribute("value");
         };
 
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document,
+                s = d.createElement('script');
             s.src = 'https://jchavez-code.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
