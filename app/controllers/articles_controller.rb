@@ -1,6 +1,5 @@
 # Controller for articles to be published.
 class ArticlesController < ApplicationController
-  include Viewable
 
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
@@ -67,9 +66,9 @@ class ArticlesController < ApplicationController
   def set_article
     slug = params[:id]
 
-    if article_exists?(slug)
+    if Article.article_exists?(slug)
       article = Article.find_by_slug(slug)
-      if admin? || article_published?(article)
+      if admin? || Article.article_published?(article)
           @article = article
           return
       end

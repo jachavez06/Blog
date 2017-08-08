@@ -122,3 +122,12 @@ That doesn't mean all business logic belongs in the models, the controllers shou
 Fat models, thin controllers
 
 TL;DR = Controller concern for routing; Model concern for database manipulation.
+
+
+###
+Concerns, and mixins in general, are poor choices for breaking down a large class. They are not self-contained – they pollute the classes that they are included into. They create cyclic dependencies: the mixin depends on methods of the class, and the class depends on the mixin methods. Remember that mixins are essentially multiple inheritance.
+
+What Mixins Are Actually For
+If you look at Ruby core and the standard library, you’ll notice that mixins are used for one thing: convenience methods. Take Comparable, for example. It allows you to write x < y, which could otherwise be written as (x <=> y) < 0. The < method makes code nicer to read, but it’s just piggybacking off the functionality of the <=> method, which the Comparable depends on. The same can be said for Enumerable and Forwardable.
+
+When it comes to Rails, it’s a contentious issue whether concerns should be used at all. Controversy aside, slimming down a single model is still probably a bad use case for concerns. Concerns are used to give identical functionality to multiple different model classes. For example, if you can apply tags to both users and blog posts, then you might make a Taggable concern that gets included into the User and BlogPost model classes. A concern that is only included into a single model class is a kind of code smell.

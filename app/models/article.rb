@@ -1,5 +1,6 @@
 # Articles for the site.
 class Article < ApplicationRecord
+
   # Body
   validates :title, presence: true, uniqueness: { case_sensitive: false },
                     length: { minimum: 10, maximum: 50 }
@@ -32,6 +33,17 @@ class Article < ApplicationRecord
   def make_unpublishable(articles_params)
     assign_attributes(articles_params.merge(published: false))
   end
+
+    # Check if article exists by looking up slug. 
+    # Returns article object if exists.
+    def self.article_exists? (slug)
+        Article.exists?(slug: slug)
+    end
+
+    # action to check if article is published
+    def self.article_published? (article)
+        article.published
+    end
 
   private
 
