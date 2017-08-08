@@ -1,4 +1,4 @@
-module Lookupable
+module Viewable
     include ActiveSupport::Concern
 
     # Check if article exists by looking up slug. 

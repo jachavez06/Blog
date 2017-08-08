@@ -1,7 +1,7 @@
 # Controller for articles to be published.
 class ArticlesController < ApplicationController
-  include Lookupable
-  
+  include Viewable
+
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
