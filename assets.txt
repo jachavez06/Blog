@@ -64,10 +64,6 @@ TL;DR= Concerns for code shared between controllers or between models.
 
 
 ###
-
-30
-down vote
-accepted
 Classes are also objects in Ruby, so they can have their own instance variables which are called class instance variables.
 
 @@world is a class variable
@@ -112,3 +108,17 @@ $stuff - a global variable (just one for the program)
 
 # returns if something is false
 return unless <something></something>
+
+
+### 
+What goes in Model concerns vs Controller concerns?
+
+It depends. In the spirit of object oriented programming it is better for a model (class) to encapsulate it's own data and behaviour that is related to manipulating that data. The way the data is manipulated is of course dependant on your business logic but if it's tightly coupled with the data then it should belong in the model.
+
+That doesn't mean all business logic belongs in the models, the controllers should be responsible for marshalling interaction between the user and the data and possibly any interactions between models.
+
+1) For design: If you see you are violating DRY in your controllers many times, its probably time to move your logic to models.
+
+Fat models, thin controllers
+
+TL;DR = Controller concern for routing; Model concern for database manipulation.
