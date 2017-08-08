@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     set_meta_tags description: 'A list of all the tutorials I have written.'
     set_meta_tags keywords: 'Blog, Code, Tutorial, Guide, Example, Program'
 
-    @unpublished = Article.where(published: false) if is_admin?
+    @unpublished = Article.where(published: false) if admin?
   end
 
   def new
@@ -72,7 +72,7 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find_by_slug(params[:id])
-    if @article.nil? || (@article.published == false && !logged_in?) || (@article.published == false && !is_admin?)
+    if @article.nil? || (@article.published == false && !logged_in?) || (@article.published == false && !admin?)
       redirect_to articles_path
     end
   end
@@ -83,7 +83,7 @@ class ArticlesController < ApplicationController
   end
 
   def require_admin
-    if logged_in? && !is_admin?
+    if logged_in? && !admin?
       flash[:danger] = 'Only admin users can perform that action'
       redirect_to root_path
     end
