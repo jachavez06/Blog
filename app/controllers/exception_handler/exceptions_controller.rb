@@ -1,6 +1,5 @@
 module ExceptionHandler
   class ExceptionsController < ApplicationController
-
     # => Response
     # => http://www.justinweiss.com/articles/respond-to-without-all-the-pain/
     respond_to :html, :js, :json, :xml
@@ -54,6 +53,5 @@ module ExceptionHandler
 
     ##################################
     ##################################
-
   end
 end
