@@ -1,4 +1,4 @@
-# Article
+# Articles for the site.
 class Article < ApplicationRecord
   # Body
   validates :title, presence: true, uniqueness: { case_sensitive: false },
@@ -32,7 +32,7 @@ class Article < ApplicationRecord
   def make_unpublishable(articles_params)
     assign_attributes(articles_params.merge(published: false))
   end
-  
+
   private
 
   def assign_slug

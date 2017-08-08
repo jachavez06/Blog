@@ -1,3 +1,4 @@
+# Articles now have metadata.
 class AddMetaDataToArticles < ActiveRecord::Migration[5.1]
   def change
     add_column :articles, :meta_data_title, :string
