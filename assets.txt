@@ -100,3 +100,12 @@ Hi.new.instance_variables # => @c
 # Hi is an object of class Class
 # Hi.new is an object of class Hi
 Keep in mind that all instance variables return nil if they don't exist.
+
+
+### 
+
+
+stuff - a local variable
+@stuff - an object variable (one per object)
+@@stuff - a class variable (just one for a whole class of objects)
+$stuff - a global variable (just one for the program)
