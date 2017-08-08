@@ -42,11 +42,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    if publishing?
-      @article.assign_attributes(articles_params.merge(published: true,
-                                                       created_at: Time.zone.now,
-                                                       updated_at: Time.zone.now))
-    end
+    #if publishing?
+    #  @article.assign_attributes(articles_params.merge(published: true,
+    #                                                   created_at: Time.zone.now,
+    #                                                   updated_at: Time.zone.now))
+    #end
+
     @article.assign_attributes(articles_params.merge(published: false)) if unpublishing?
 
     if @article.changed?
@@ -72,9 +73,13 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find_by_slug(params[:id])
-    if @article.nil? || (@article.published == false && !logged_in?) || (@article.published == false && !admin?)
-      redirect_to articles_path
-    end
+    # When to redirect?
+    # if article is nil
+    return unless @article.nill?
+    # if article is unpublished and not logged in
+    return unless (!@article.published && !logged_in?) || \
+                  (!@article.published && !admin?)
+    redirect_to articles_path
   end
 
   def articles_params
@@ -83,10 +88,9 @@ class ArticlesController < ApplicationController
   end
 
   def require_admin
-    if logged_in? && !admin?
-      flash[:danger] = 'Only admin users can perform that action'
-      redirect_to root_path
-    end
+    return unless logged_in? && !admin?
+    flash[:danger] = 'Only admin users can perform that action!'
+    redirect_to root_path
   end
 
   def no_index

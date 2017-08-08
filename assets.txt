@@ -30,3 +30,32 @@ flay
 
 
 Note that size: size is equivalent to :size => size.
+
+
+Use helpers if you're working in a view (template) and you need to build a complex bit of HTML such as a <table>. Or, if you want to change some presentation data that's not connected to the database.
+
+def truncate_html( html, options = {} )
+  options[:length] = 35 unless options[:length]
+  truncate( strip_tags( html ), options )
+end
+
+Use models when you're working with database objects, and you want to simplify the business logic.
+
+  def one_day?
+    start_date.to_s[0,9] == end_date.to_s[0,9]
+  end  
+Here's Helpers in the guides: http://api.rubyonrails.org/v5.1/classes/ActionController/Helpers.html
+
+And here's Models: http://guides.rubyonrails.org/active_record_querying.html
+
+
+TL;DR= Models is for database logic; Helpers are for view logic.
+
+######
+The Concern is a tool provided by the ActiveSupport lib for including modules in classes, creating mixins.
+
+A good concern should be able to work in isolation, so it must be dependency-free. It should have a very concrete and limited responsibility. The kind of responsibilities for a concern should be framework or infrastructure related. That means that they shouldn’t contain business logic. Business logic is better modelled as abstractions (classes), rather than concerns. Value objects, services, repositories, aggregates or whatever artifact that fits better.
+But even good concerns present software design problems. Concerns are a bit harder to test, since you need more arrangement. But maybe the most important problem is that concerns promote the is a relation between our classes. With theis a relation, an object inherits behaviour directly, so more and more responsibilites are aggregated to the object as long as we keep adding concerns. True seggregation of responsibilities come with has a relationship, either via composition or aggregation.
+Finally, it’s hard to say what problem concerns solve. Every problem that concerns solve can be solved with composition or aggregation. Better than that, composition/aggregation solve the same problem but explicitly.
+
+TL;DR= Concerns for code shared between controllers or between models. 
