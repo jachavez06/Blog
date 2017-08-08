@@ -12,6 +12,8 @@ rubocop
     https://github.com/bbatsov/rubocop/blob/master/manual/formatters.md
     https://www.dennyzhang.com/rubocop_errors
     http://rubocop.readthedocs.io/en/latest/basic_usage/
+    https://github.com/bbatsov/rubocop/blob/master/manual/cops_metrics.md
+rubocop --auto-gen-config #for config which you can edit
 rubocop -a <file></file>
 rubocop --format worst
 rubocop --format offenses
