@@ -23,10 +23,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article.make_publishable(articles_params) if publishing?
-
+    publishing? ? @article.make_publishable(articles_params) : @article = Article.new(articles_params)
+    
     if @article.save
-      flash[:success] = @flash_messages[:created]
+      flash[:success] = @@flash_messages[:created]
       redirect_to article_path(@article)
     else
       render 'new'
