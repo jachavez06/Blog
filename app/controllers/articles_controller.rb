@@ -48,7 +48,7 @@ class ArticlesController < ApplicationController
     @article.make_unpublishable(articles_params) if unpublishing?
     # Next line adds to cyclomatic complexity but shortens block to acceptable
     
-    (flash[:info] = @@flash_messages[:no_change]) && render('edit') && return unless @article.changed?
+    (flash[:info] = @@flash_messages[:no_change]) && render('edit') && return unless !@article.changed?
 
     if @article.save
       flash[:success] = @@flash_messages[:updated]
