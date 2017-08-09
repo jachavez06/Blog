@@ -23,7 +23,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    publishing? ? @article.make_publishable(articles_params) : @article = Article.new(articles_params)
+    @article = Article.new(articles_params)
+    @article.make_publishable(articles_params) if publishing?
     
     if @article.save
       flash[:success] = @@flash_messages[:created]
