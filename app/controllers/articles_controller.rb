@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
     
     (flash[:info] = @@flash_messages[:no_change]) && render('edit') && return unless !@article.changed?
 
-    if @article.save && @article.assign_attributes(articles_params)
+    if @article.assign_attributes(articles_params) && @article.save
       flash[:success] = @@flash_messages[:updated]
       redirect_to article_path(@article)
     else
