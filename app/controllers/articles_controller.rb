@@ -5,8 +5,9 @@ class ArticlesController < ApplicationController
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
 
-  @no_changes_made = 'Article was not updated because no changes were made!'
-  @updated = 'Article was successfully updated!'
+  @@flash_messages = {updated: "Article was successfully updated!",
+                      no_change: "Article was not updated because no changes were made!",
+                      created:  "Article was successfully created!" }
 
   def index
     @articles = Article.where(published: true).paginate(page: params[:page],
@@ -25,7 +26,7 @@ class ArticlesController < ApplicationController
     @article.make_publishable(articles_params) if publishing?
 
     if @article.save
-      flash[:success] = 'Article was successfully created!'
+      flash[:success] = @flash_messages[:created]
       redirect_to article_path(@article)
     else
       render 'new'
@@ -43,11 +44,13 @@ class ArticlesController < ApplicationController
 
   def update
     @article.make_publishable(articles_params) if publishing?
-    @article.make_unpublishable if unpublishing?
+    @article.make_unpublishable(articles_params) if unpublishing?
     # Next line adds to cyclomatic complexity but shortens block to acceptable
-    (flash[:info] = @no_changes_made) && render('edit') unless @article.changed?
+    
+    (flash[:info] = @@flash_messages[:no_change]) && render('edit') && return unless @article.changed?
+
     if @article.save
-      flash[:success] = 'Article was successfully updated!'
+      flash[:success] = @@flash_messages[:updated]
       redirect_to article_path(@article)
     else
       render 'edit'

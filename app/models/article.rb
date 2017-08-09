@@ -2,16 +2,14 @@
 class Article < ApplicationRecord
 
   # Body
-  validates :title, presence: true, uniqueness: { case_sensitive: false },
-                    length: { minimum: 10, maximum: 50 }
-  validates :content, presence: true, length: { minimum: 5 }
+  validates :title, presence: true, uniqueness: { case_sensitive: false }
+  validates :content, presence: true
 
   # Meta-data
   @keyword_regex = /\A([a-z]+)(,\s*[a-z]+)*\z/i
   validates :meta_data_title, presence: true,
-                              uniqueness: { case_sensitive: false },
-                              length: { minimum: 10 }
-  validates :meta_data_description, presence: true, length: { minimum: 80 }
+                              uniqueness: { case_sensitive: false }
+  validates :meta_data_description, presence: true
   validates :meta_data_keywords, presence: true,
                                  format: { with: @keyword_regex,
                                            message: 'Invalid keyword format.' },

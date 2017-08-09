@@ -7,7 +7,7 @@ end
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'ckeditor'
-gem 'exception_handler'
+#gem 'exception_handler'
 gem 'jquery-rails'
 gem 'meta-tags'
 gem 'paperclip'
@@ -28,14 +28,6 @@ gem 'turbolinks', '~> 5'
 
 gem 'bcrypt', '~> 3.1.7'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-end
-
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -49,7 +41,20 @@ group :development do
   gem 'bullet'
   # Routes
   gem 'traceroute'
+  gem 'better_errors', git: 'https://github.com/charliesome/better_errors.git', branch: 'master'
+  gem "pry-rails"
+  gem 'meta_request'
 end
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+end
+
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

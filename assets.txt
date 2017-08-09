@@ -131,3 +131,22 @@ What Mixins Are Actually For
 If you look at Ruby core and the standard library, you’ll notice that mixins are used for one thing: convenience methods. Take Comparable, for example. It allows you to write x < y, which could otherwise be written as (x <=> y) < 0. The < method makes code nicer to read, but it’s just piggybacking off the functionality of the <=> method, which the Comparable depends on. The same can be said for Enumerable and Forwardable.
 
 When it comes to Rails, it’s a contentious issue whether concerns should be used at all. Controversy aside, slimming down a single model is still probably a bad use case for concerns. Concerns are used to give identical functionality to multiple different model classes. For example, if you can apply tags to both users and blog posts, then you might make a Taggable concern that gets included into the User and BlogPost model classes. A concern that is only included into a single model class is a kind of code smell.
+
+
+####
+Lookup pry goodies later.
+
+rails c
+show-routes
+show-routes --grep beer [beer is a create action route]
+show-routes --grep new
+show-models
+
+
+RAILS_ENV=production
+RAILS_ENV=development
+
+TRUSTED_IP=127.0.0.1 rails s
+
+
+        bin/rails db:environment:set RAILS_ENV=development
