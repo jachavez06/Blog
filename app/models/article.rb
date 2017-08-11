@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   validates :content, presence: true
 
   # Meta-data
-  @keyword_regex = /\A([a-z]+)(,\s*[a-z]+)*\z/i
+  @keyword_regex = /\A([a-z]+|[0-9]+)(,\s([a-z]+|[0-9]+))*\z/i
   validates :meta_data_title, presence: true,
                               uniqueness: { case_sensitive: false }
   validates :meta_data_description, presence: true
