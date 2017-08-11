@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
 
   @@flash_messages = {updated: "Article was successfully updated!",
                       no_change: "Article was not updated because no changes were made!",
-                      created:  "Article was successfully created!" }
+                      created:  "Article was successfully created!",
+                      save_error: "An internal error occured while trying to save your changes!" }
 
   def index
     @articles = Article.where(published: true).paginate(page: params[:page],
@@ -44,18 +45,15 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article.make_publishable(articles_params) if publishing?
-    @article.make_unpublishable(articles_params) if unpublishing?
-    # Next line adds to cyclomatic complexity but shortens block to acceptable
-    
-    (flash[:info] = @@flash_messages[:no_change]) && render('edit') && return unless !@article.changed?
-
-    if @article.assign_attributes(articles_params) && @article.save
-      flash[:success] = @@flash_messages[:updated]
-      redirect_to article_path(@article)
+    if publishing?
+      @article.make_publishable(articles_params) 
+    elsif unpublishing?
+      @article.make_unpublishable(articles_params)
     else
-      render 'edit'
+      @article.assign_attributes(articles_params)
+      (flash[:info] = @@flash_messages[:no_change]) && render('edit') && return unless @article.changed?
     end
+    save_article
   end
 
   def destroy
@@ -65,6 +63,15 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def save_article
+    if @article.save
+      flash[:success] = @@flash_messages[:updated]
+      redirect_to article_path(@article)
+    else
+      flash[:danger] = @@flash_messages[:save_error]
+    end 
+  end
 
   # Load article if it exists in db. 
   def set_article
@@ -103,4 +110,5 @@ class ArticlesController < ApplicationController
   def unpublishing?
     params[:commit] == 'Unpublish'
   end
+
 end
