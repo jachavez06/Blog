@@ -45,7 +45,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    byebug
     if publishing?
       @article.make_publishable(articles_params) 
     elsif unpublishing?
