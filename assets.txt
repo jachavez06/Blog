@@ -150,3 +150,8 @@ TRUSTED_IP=127.0.0.1 rails s
 
 
         bin/rails db:environment:set RAILS_ENV=development
+
+## 
+Using pronto:
+
+pronto run -c origin/master
