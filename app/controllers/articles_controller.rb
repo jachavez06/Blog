@@ -94,7 +94,7 @@ class ArticlesController < ApplicationController
   end
 
   def require_admin
-    return unless logged_in? && !admin?
+    return unless !admin?
     flash[:danger] = 'Only admin users can perform that action!'
     redirect_to root_path
   end
