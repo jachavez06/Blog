@@ -12,18 +12,28 @@
                     <%= f.cktext_area :content, rows: 50, class:"form-control", placeholder: "Body of article", id: "article" %>
             </div>
             <hr>
-            <h2>Meta-data</h2>
+            <h3>Meta-data</h3>
             <div class="form-group">
                 <%= f.label :Title %>
                     <%= f.text_field :meta_data_title, class:"form-control", placeholder: "Title", autofocus:true %>
             </div>
             <div class="form-group">
                 <%= f.label :Description %>
-                    <%= f.text_field :meta_data_description, class:"form-control", placeholder: "Description", autofocus:true %>
+                    <%= f.text_field :meta_data_description, class:"form-control", placeholder: "Description" %>
             </div>
             <div class="form-group">
                 <%= f.label :Keywords %>
-                    <%= f.text_field :meta_data_keywords, class:"form-control", placeholder: "Keywords", autofocus:true %>
+                    <%= f.text_field :meta_data_keywords, class:"form-control", placeholder: "Keywords" %>
+            </div>
+            <hr>
+            <h3>Timestamps</h3>
+            <div class="form-group">
+                <%= f.label :created_at %>:
+                    <%= f.date_select :created_at, class:"form-control", placeholder: "Keywords" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :updated_at %>:
+                    <%= f.date_select :updated_at, class:"form-control", placeholder: "Keywords" %>
             </div>
             <div class="float-sm-right">
                 <% if article.published? %>
