@@ -35,15 +35,21 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  # Static code analyzer
-  gem 'rubocop', '~> 0.49.1', require: false
-  # Optimization
-  gem 'bullet'
-  # Routes
+  
+  # Debug
+  gem 'byebug' #
+  gem 'better_errors' #
+  gem 'pry-rails' #
   gem 'traceroute'
-  gem 'better_errors', git: 'https://github.com/charliesome/better_errors.git', branch: 'master'
-  gem "pry-rails"
   gem 'meta_request'
+  
+  # Code Optimization
+  gem 'bullet'
+
+  # Code style
+  gem 'rubocop', '~> 0.49.1', require: false
+  gem 'rails_best_practices'
+
 end
 
 group :development, :test do
