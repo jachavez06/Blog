@@ -155,3 +155,4 @@ TRUSTED_IP=127.0.0.1 rails s
 Using pronto:
 
 pronto run -c origin/master
+
