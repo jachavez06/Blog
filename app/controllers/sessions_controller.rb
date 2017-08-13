@@ -1,8 +1,8 @@
-# Controller for creating a user session.
+# Controller for creating a admin session.
 class SessionsController < ApplicationController
   before_action :no_index, only: [:new]
-  before_action :find_user, only: [:create]
-  before_action :authenticate_user, only: [:create]
+  before_action :find_admin, only: [:create]
+  before_action :authenticate_admin, only: [:create]
 
   def new
     respond_to do |format|
@@ -12,14 +12,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if @user && @authenticated
-      @old_user = User.find_by(ip: request.remote_ip)
-      @old_user.delete
-      @old_user.save
+    if @admin && @authenticated
+      @old_admin = admin.find_by(ip: request.remote_ip)
+      @old_admin.delete
+      @old_admin.save
 
-      @user.ip = request.remote_ip
-      @user.save
-      ahoy.authenticate(@user)
+      @admin.ip = request.remote_ip
+      @admin.save
+      ahoy.authenticate(@admin)
       redirect_to articles_path
     else
       respond_to do |format|
@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:admin_id] = nil
     session[:ip] = nil
     flash[:success] = 'You have logged out.'
     redirect_to root_path
@@ -41,11 +41,11 @@ class SessionsController < ApplicationController
     set_meta_tags nofollow: true
   end
 
-  def find_user
-    @user = User.find_by(username: params[:session][:username])
+  def find_admin
+    @admin = admin.find_by(login: params[:session][:login])
   end
 
-  def authenticate_user
-    @authenticated = @user.authenticate(params[:session][:password])
+  def authenticate_admin
+    @authenticated = @admin.authenticate(params[:session][:password])
   end
 end

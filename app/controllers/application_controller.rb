@@ -16,12 +16,12 @@ class ApplicationController < ActionController::Base
     session[:ip] = ip
 
     # Add User to table.
-    User.find_or_create_by(:username => "empty", :password_digest => "empty", :ip => ip)
+    User.create(:username => "empty", :password_digest => "empty", :ip => ip)
   end
 
   def current_user
-    ip = request.remote_ip
-    @current_user = User.find_by(ip: ip)
+    ip = session[:ip]
+    User.find_by(ip: ip)
   end
 
   def logged_in?
@@ -29,6 +29,6 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    current_user.admin
+    #current_user.admin
   end
 end
