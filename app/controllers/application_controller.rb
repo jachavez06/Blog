@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     session[:ip] = ip
 
     # Add User to table.
-    User.create(:username => "empty", :password_digest => "empty", :ip => ip)
+    User.create(:ip => ip)
   end
 
   def current_user
@@ -24,11 +24,7 @@ class ApplicationController < ActionController::Base
     User.find_by(ip: ip)
   end
 
-  def logged_in?
-    #!current_user.nil?
-  end
-
   def admin?
-    #current_user.admin
+    session[:admin] == true
   end
 end

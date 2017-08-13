@@ -13,12 +13,13 @@ class SessionsController < ApplicationController
 
   def create
     if @admin && @authenticated
-      @old_admin = admin.find_by(ip: request.remote_ip)
-      @old_admin.delete
-      @old_admin.save
+      #@old_admin = admin.find_by(ip: request.remote_ip)
+      #@old_admin.delete
+      #@old_admin.save
 
-      @admin.ip = request.remote_ip
-      @admin.save
+      #@admin.ip = request.remote_ip
+      #@admin.save
+      session[:admin] = true
       ahoy.authenticate(@admin)
       redirect_to articles_path
     else
@@ -29,8 +30,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:admin_id] = nil
-    session[:ip] = nil
+    session[:admin] = nil
     flash[:success] = 'You have logged out.'
     redirect_to root_path
   end
@@ -42,7 +42,7 @@ class SessionsController < ApplicationController
   end
 
   def find_admin
-    @admin = admin.find_by(login: params[:session][:login])
+    @admin = Admin.find_by(login: params[:session][:login])
   end
 
   def authenticate_admin
