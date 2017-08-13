@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?, :admin?
 
   def authenticate_user
-
-    
     # Do nothing if current_user is set.
     return if current_user.present?
 
@@ -18,16 +16,16 @@ class ApplicationController < ActionController::Base
     session[:ip] = ip
 
     # Add User to table.
-    User.create(:username => "empty", :password_digest => "empty", :ip => ip)
+    User.find_or_create_by(:username => "empty", :password_digest => "empty", :ip => ip)
   end
 
   def current_user
-    user_id = session[:ip]
-    @current_user ||= User.find_by(ip: user_id) if user_id
+    ip = request.remote_ip
+    @current_user = User.find_by(ip: ip)
   end
 
   def logged_in?
-    !current_user.nil?
+    #!current_user.nil?
   end
 
   def admin?

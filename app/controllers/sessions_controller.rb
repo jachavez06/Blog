@@ -13,7 +13,13 @@ class SessionsController < ApplicationController
 
   def create
     if @user && @authenticated
-      session[:user_id] = @user.id
+      @old_user = User.find_by(ip: request.remote_ip)
+      @old_user.delete
+      @old_user.save
+
+      @user.ip = request.remote_ip
+      @user.save
+      ahoy.authenticate(@user)
       redirect_to articles_path
     else
       respond_to do |format|
@@ -24,6 +30,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    session[:ip] = nil
     flash[:success] = 'You have logged out.'
     redirect_to root_path
   end
