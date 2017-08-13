@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
 
   def create
     if @admin && @authenticated
+      @admin.users << current_user
       #@old_admin = admin.find_by(ip: request.remote_ip)
       #@old_admin.delete
       #@old_admin.save
