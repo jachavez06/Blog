@@ -1,3 +1,5 @@
+heroku run rake sitemap:refresh
+
 RAILS_ENV=production bundle exec rake assets:precompile
 git add public/assets
 git commit -m "vendor compiled assets"
