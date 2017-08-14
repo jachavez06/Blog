@@ -1,6 +1,18 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://guides.jesuschavez.org"
 
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
+  fogprovider: 'AWS',
+  awsaccesskeyid: ENV['AWSACCESSKEYID'],
+  awssecretaccesskey: ENV['AWSSECRETACCESSKEY'],
+  fogdirectory: ENV['S3BUCKET'],
+  fogregion: ENV['AWS_REGION'])
+
+SitemapGenerator::Sitemap.sitemapshost = "https://s3-#{ENV['AWSREGION']}.amazonaws.com/#{ENV['S3_BUCKET']}/"
+
+SitemapGenerator::Sitemap.sitemapspath = 'sitemaps/'
+SitemapGenerator::Sitemap.publicpath = 'tmp/'
+
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
   #
