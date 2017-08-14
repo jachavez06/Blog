@@ -272,6 +272,8 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
     sexp_processor (4.10.0)
+    sitemap_generator (5.3.1)
+      builder (~> 3.0)
     slop (3.6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -350,6 +352,7 @@ DEPENDENCIES
   rubocop (= 0.49.1)
   sass-rails (= 5.0.6)
   selenium-webdriver (= 3.4.4)
+  sitemap_generator
   spring (= 2.0.2)
   spring-watcher-listen (= 2.0.1)
   sprockets-rails

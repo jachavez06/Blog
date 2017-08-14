@@ -28,6 +28,7 @@ gem 'turbolinks', '5.0.1'
 
 gem 'ahoy_matey'
 gem 'bcrypt', '3.1.11'
+gem 'sitemap_generator'
 
 
 group :development do
