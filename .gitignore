@@ -21,4 +21,5 @@
 /yarn-error.log
 
 /config/database.yml
+/config/sitemap.rb
 .byebug_history

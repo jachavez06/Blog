@@ -1,17 +1,21 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://guides.jesuschavez.org"
 
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
-  fogprovider: 'AWS',
-  awsaccesskeyid: ENV['AWSACCESSKEYID'],
-  awssecretaccesskey: ENV['AWSSECRETACCESSKEY'],
-  fogdirectory: ENV['S3BUCKET'],
-  fogregion: ENV['AWS_REGION'])
+# pick a place safe to write the files
+SitemapGenerator::Sitemap.public_path = 'tmp/'
 
+# store on S3 using Fog 
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(fog_provider: 'AWS',
+  aws_access_key_id: "AKIAIBK235LTI4VDGWVA",
+  aws_secret_access_key: "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",
+  fog_directory: "jchavez-guides-sitemap",
+  fog_region: 'us-west-2')
+
+# inform the map cross-linking where to find the other maps
 SitemapGenerator::Sitemap.sitemaps_host = "https://s3-#{ENV['AWSREGION']}.amazonaws.com/#{ENV['S3_BUCKET']}/"
 
+# pick a namespace within your bucket to organize your maps
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
-SitemapGenerator::Sitemap.public_path = 'tmp/'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
