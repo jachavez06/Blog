@@ -8,10 +8,10 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
   fogdirectory: ENV['S3BUCKET'],
   fogregion: ENV['AWS_REGION'])
 
-SitemapGenerator::Sitemap.sitemapshost = "https://s3-#{ENV['AWSREGION']}.amazonaws.com/#{ENV['S3_BUCKET']}/"
+SitemapGenerator::Sitemap.sitemaps_host = "https://s3-#{ENV['AWSREGION']}.amazonaws.com/#{ENV['S3_BUCKET']}/"
 
-SitemapGenerator::Sitemap.sitemapspath = 'sitemaps/'
-SitemapGenerator::Sitemap.publicpath = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.public_path = 'tmp/'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
