@@ -6,9 +6,9 @@ SitemapGenerator::Sitemap.public_path = 'tmp/'
 
 # store on S3 using Fog 
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(fog_provider: 'AWS',
-  aws_access_key_id: "AKIAIBK235LTI4VDGWVA",
-  aws_secret_access_key: "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",
-  fog_directory: "jchavez-guides-sitemap",
+  aws_access_key_id: 'AKIAIBK235LTI4VDGWVA',
+  aws_secret_access_key: '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',
+  fog_directory: 'jchavez-guides-sitemap',
   fog_region: 'us-west-2')
 
 # inform the map cross-linking where to find the other maps
