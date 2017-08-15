@@ -1,3 +1,11 @@
+body{
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-rendering: optimizelegibility;
+    background: #fafafa;
+    margin-bottom: 268px;
+    color: #555555;
+}
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -78,4 +86,7 @@
     border-top: 1px solid #eeeeee;
     box-sizing: content-box;
     height: 0;
+}
+.panel-body :first-child {
+    margin-top: 0px;
 }
