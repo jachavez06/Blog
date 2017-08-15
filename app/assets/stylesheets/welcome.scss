@@ -38,10 +38,14 @@
 .intro-header .site-heading {
   text-align: center;
 }
-.intro-header .site-heading h1,
-.intro-header .page-heading h1 {
+.intro-header .site-heading #welcome_header {
   margin-top: 0;
+  margin-left: 200px;
+  margin-right: 200px;
   font-size: 50px;
+  border-bottom: 2px solid white;
+  
+  
 }
 .intro-header .site-heading .subheading {
   font-size: 24px;
@@ -52,7 +56,7 @@
   margin: 10px 0 0;
 }
 @media only screen and (min-width: 768px) {
-  .intro-header .site-heading h1{
+  .intro-header .site-heading #welcome_header{
     font-size: 80px;
   }
   .intro-header .site-heading{
