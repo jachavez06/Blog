@@ -1,6 +1,5 @@
 # Articles for the site.
 class Article < ApplicationRecord
-
   # Body
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :content, presence: true

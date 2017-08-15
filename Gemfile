@@ -20,7 +20,8 @@ gem 'rouge', '2.1.1'
 gem 'sass-rails', '5.0.6'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'uglifier', '3.2.0'
-gem 'will_paginate', '3.1.5'
+gem 'will_paginate', '~> 3.1.0'
+
 
 gem 'coffee-rails', '4.2.2'
 gem 'jbuilder', '2.7.0'
