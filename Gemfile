@@ -40,7 +40,7 @@ group :development do
   gem 'spring-watcher-listen', '2.0.1'
 
   # Debug
-  gem 'better_errors', '2.3.0'
+  #gem 'better_errors', '2.3.0'
   gem 'binding_of_caller', '0.7.2'
   gem 'byebug', '9.0.6'
   gem 'meta_request', '0.4.3'

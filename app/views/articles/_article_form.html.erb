@@ -1,50 +1,55 @@
 <%= render 'shared/errors', obj: article %>
 
 <div class="row">
-    <div class="col-12">
-        <%= form_for(article, :html => {class: "form-horizontal", role: "form" }) do |f| %>
-            <div class="form-group">
-                <%= f.label :title %>
+    <div class="col-8">
+        <div class="panel panel-default ">
+            <div class="panel-body">
+                <div class="form-group">
+                    <%= f.label :title %>
                     <%= f.text_field :title, class:"form-control", placeholder: "Title of Article", autofocus:true %>
-            </div>
-            <div class="form-group">
-                <%= f.label :content%>
+                </div>
+                <div class="form-group">
+                    <%= f.label :content%>
                     <%= f.cktext_area :content, rows: 50, class:"form-control", placeholder: "Body of article", id: "article" %>
+                </div>
             </div>
-            <hr>
-            <h3>Meta-data</h3>
-            <div class="form-group">
-                <%= f.label :Title %>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="panel panel-default ">
+            <div class="panel-body">
+                <div class="form-group">
+                    <%= f.label :Title %>
                     <%= f.text_field :meta_data_title, class:"form-control", placeholder: "Title", autofocus:true %>
-            </div>
-            <div class="form-group">
-                <%= f.label :Description %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :Description %>
                     <%= f.text_field :meta_data_description, class:"form-control", placeholder: "Description" %>
-            </div>
-            <div class="form-group">
-                <%= f.label :Keywords %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :Keywords %>
                     <%= f.text_field :meta_data_keywords, class:"form-control", placeholder: "Keywords" %>
-            </div>
-            <hr>
-            <h3>Timestamps</h3>
-            <div class="form-group">
-                <%= f.label :created_at %>:
+                </div>
+                <hr> <!-- Fix overlap -->
+                <div class="form-group">
+                    <%= f.label :created_at %>:
                     <%= f.date_select :created_at, class:"form-control", placeholder: "Keywords" %>
-            </div>
-            <div class="form-group">
-                <%= f.label :updated_at %>:
+                </div>
+                <div class="form-group">
+                    <%= f.label :updated_at %>:
                     <%= f.date_select :updated_at, class:"form-control", placeholder: "Keywords" %>
+                </div>
+                <div class="float-sm-right">
+                    <% if article.published? %>
+                        <%= f.submit "Update", class: "btn btn-primary" %>
+                        <%= f.submit "Unpublish", class: "btn btn-default" %>
+                    <% else %>
+                        <%= f.submit "Publish", class: "btn btn-primary" %>
+                        <%= f.submit "Save", class: "btn btn-default" %>
+                    <% end %>
+                    <%= link_to "Cancel", request.referer.present? ? request.referer : default_path, class: "btn btn-secondary" %>
+                </div>
             </div>
-            <div class="float-sm-right">
-                <% if article.published? %>
-                    <%= f.submit "Update", class: "btn btn-primary" %>
-                    <%= f.submit "Unpublish", class: "btn btn-default" %>
-                <% else %>
-                    <%= f.submit "Publish", class: "btn btn-primary" %>
-                    <%= f.submit "Save", class: "btn btn-default" %>
-                <% end %>
-                <%= link_to "Cancel", request.referer.present? ? request.referer : default_path, class: "btn btn-secondary" %>
-            </div>
-        <% end %>
+        </div>
     </div>
 </div>

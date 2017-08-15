@@ -74,6 +74,7 @@ class ArticlesController < ApplicationController
 
   # Load article if it exists in db. 
   def set_article
+    
     slug = params[:id]
 
     if Article.article_exists?(slug)
@@ -88,6 +89,7 @@ class ArticlesController < ApplicationController
   end
 
   def articles_params
+    
     params.require(:article).permit(:title, :content, :meta_data_title,
                                     :meta_data_description, :meta_data_keywords, :created_at, :updated_at)
   end
