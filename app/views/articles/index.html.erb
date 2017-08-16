@@ -5,7 +5,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <%= render 'article_list', obj: @articles %>
-                        <%= will_paginate(@articles, :renderer => PaginateHelper::LinkRenderer) %>
+                    <%= will_paginate(@articles, :renderer => PaginateHelper::LinkRenderer) %>
                 </div>
             </div>
         </div>
