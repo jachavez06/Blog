@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
                       save_error: "An internal error occured while trying to save your changes!" }
 
   def index
-    @articles = Article.where(published: true).paginate(:page => params[:page], :per_page => 1)
+    @articles = Article.where(published: true).paginate(:page => params[:page], :per_page => 10)
     set_meta_tags description: 'A list of all the tutorials I have written.'
     set_meta_tags keywords: 'Blog, Code, Tutorial, Guide, Example, Program'
 
