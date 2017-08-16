@@ -9,11 +9,15 @@
         <li class="nav-item">
             <%= link_to 'Articles', articles_path(), class: "nav-link" %>
         </li>
+        <% if admin? %>
+            <%= link_to 'Admin Panel', admin_path, class: "nav-link" %>
+        <% end %>
+        <li class="divider-vertical"></li>
         <li class="nav-item">
             <% if admin? %>
-                <%= link_to 'Logout', logout_path, method: :delete, class: "nav-link" %>
+                <%= link_to '<i class="fa fa-sign-out" aria-hidden="true"></i> Logout'.html_safe, logout_path, method: :delete, class: "nav-link", id: "logout" %>
             <% else %>
-                <%= link_to 'Login', login_path,  data: {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#exampleModal'}, class: "nav-link" %>
+                <%= link_to '<i class="fa fa-sign-in" aria-hidden="true"></i> Login'.html_safe, login_path,  data: {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#exampleModal'}, class: "nav-link", id: "login" %>
             <% end %>
         </li>
     </ul>
