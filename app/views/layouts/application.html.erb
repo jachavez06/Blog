@@ -25,14 +25,22 @@
   </head>
 
   <body data-action="<%= action_name %>" data-controller="<%= controller_name %>" class="dark-bg">
-    <%= render partial: "layouts/navbar" %>
-    <%= render partial: "layouts/messages" %>
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
-    <div class="container">
-    <%= yield %>
+    <div class="header">    
+      <%= render partial: "layouts/navbar" %>
+      <%= render partial: "layouts/messages" %>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
     </div>
-    <%= render partial: "layouts/footer" %>
-  </body>
 
+    <div class="container">
+      <div class="body">
+        <%= yield %>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <%= render partial: "layouts/footer" %>
+    </div>
+    
+  </body>
 </html>

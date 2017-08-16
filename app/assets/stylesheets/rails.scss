@@ -1,10 +1,35 @@
 body {
+
+}
+html,
+body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-rendering: optimizelegibility;
     background: #fafafa;
-    //margin-bottom: 268px;
     color: #555555;
+    //position: absolute;
+    width: 100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+#container {
+   min-height:100%;
+   position:relative;
+}
+#header {
+   padding:10px;
+}
+#body {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
 }
 
 * {
@@ -461,14 +486,14 @@ body {
 
 .lesson-card {
     position: relative;
-    min-height: 120px;
+    min-height: 75px;
     text-align: left;
     -webkit-transition: background, 0.1s;
     -moz-transition: background, 0.1s;
     transition: background, 0.1s;
     display: block;
     border-radius: 5px;
-    padding: 30px
+    padding: 10px;
 }
 
 .panel-body>hr {
