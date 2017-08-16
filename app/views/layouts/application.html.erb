@@ -26,21 +26,21 @@
 
   <body data-action="<%= action_name %>" data-controller="<%= controller_name %>" class="dark-bg">
 
-    <div class="header">    
+    <div id="header">    
       <%= render partial: "layouts/navbar" %>
       <%= render partial: "layouts/messages" %>
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
     </div>
 
     <div class="container">
-      <div class="body">
+      <div id="body">
         <%= yield %>
       </div>
     </div>
     
-    <div class="footer">
+    <div id="footer">
       <%= render partial: "layouts/footer" %>
     </div>
-    
+
   </body>
 </html>
