@@ -1,38 +1,32 @@
-body {
-
-}
 html,
 body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-rendering: optimizelegibility;
     background: #fafafa;
-    color: #555555;
-    //position: absolute;
-    width: 100%;
-    height:100%;
     margin:0;
     padding:0;
+    height:100%;
+    /*color: #555555;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;*/
 }
-#container {
-   min-height:100%;
-   position:relative;
-}
-#header {
-   padding:0px;
-}
-#body {
-   padding:10px;
-   padding-bottom:60px;   /* Height of the footer */
-
-}
-#footer {
-   position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-}
-
+#wrapper {
+    min-height:100%;
+    position:relative;
+ }
+ #body {
+    padding:10px;
+    padding-bottom:60px;   /* Height of the footer */
+ }
+ #footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+ }
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
