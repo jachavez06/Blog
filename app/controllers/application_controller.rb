@@ -27,4 +27,9 @@ class ApplicationController < ActionController::Base
   def admin?
     session[:admin] == true
   end
+
+  rescue_from ActionController::RoutingError do |exception|
+    logger.error 'Routing error occurred'
+    render 'errors/404'
+   end
 end

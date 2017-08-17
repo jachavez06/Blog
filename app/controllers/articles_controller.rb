@@ -83,7 +83,7 @@ class ArticlesController < ApplicationController
       end
     end
 
-    redirect_to article_path
+    render 'errors/404'
   end
 
   def articles_params
