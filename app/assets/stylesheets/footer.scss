@@ -1,11 +1,33 @@
 footer {
     background-color: #1B1F21;
     color: #ccc;
+    //height: 100%;
+    //margin-top:15px;
     //bottom: 0;
     //width: 100%;
-    line-height: 60px;
+    //line-height: 60px;
 }
 
 #footer-social{
-    margin-top: -30px;
+    //margin-top: -20px;
+}
+#strong-footer{
+    border-bottom: 1px solid;
+    font-size: 20px;
+}
+#github{
+    font-size: 1.5em;
+    color: #ccc;
+    transition: font-size 1s;
+}
+
+#github:hover {
+    font-size: 1.65em;
+    color: #8e8e8e;
+    transition: 1s ease-out;
+}
+#copyright{
+    margin-top: 25px;
+    border-bottom: 1px solid;
+    text-align:center;
 }
