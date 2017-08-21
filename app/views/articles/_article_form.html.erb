@@ -39,6 +39,9 @@
                     <%= f.label :updated_at %>:
                     <%= f.date_select :updated_at, class:"form-control", placeholder: "Keywords" %>
                 </div>
+                <div class="form_group">
+                    <%= f.text_field :all_tags, placeholder: "Tags separated by commas" %>
+                </div>
                 <div class="float-sm-right">
                     <% if article.published? %>
                         <%= f.submit "Update", class: "btn btn-primary" %>
