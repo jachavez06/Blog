@@ -5,6 +5,5 @@ Rails.application.routes.draw do
   get 'admin', to: 'admins#index'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'  
-  match "*path", to: "welcome#catch_404", via: :all  
+  delete 'logout', to: 'sessions#destroy'
 end
