@@ -21,7 +21,7 @@
 /yarn-error.log
 
 /config/database.yml
-/config/sitemap.rb
+#/config/sitemap.rb
 /config/secrets.yml
 .byebug_history
 .rbenv-gemsets
