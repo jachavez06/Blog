@@ -32,12 +32,14 @@
                 <span class="next-episode-card text-center">
                 <i class="fa fa-newspaper-o" aria-hidden="true" title="Published on"></i>
                 <%= @article.created_at.strftime('%B %d, %Y') %><br>
-                
+
                 <% if @article.created_at.to_date != @article.updated_at.to_date %>
                     <i class="fa fa-pencil-square-o" aria-hidden="true" title="Updated on"></i>
                     <%= @article.updated_at.strftime('%B %d, %Y') %>
                 <% end %>
                 </span>
+                <h5 class="page-header" id="tag-header">Tags</h5>
+                <%= raw @article.all_tags %>
             </div>
         </div>
     </div>
