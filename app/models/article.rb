@@ -1,5 +1,10 @@
 # Articles for the site.
 class Article < ApplicationRecord
+
+  has_many :taggings
+  has_many :tags, through: :taggings
+
+
   # Body
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :content, presence: true
@@ -31,7 +36,7 @@ class Article < ApplicationRecord
     assign_attributes(articles_params.merge(published: false))
   end
 
-    # Check if article exists by looking up slug. 
+    # Check if article exists by looking up slug.
     # Returns article object if exists.
     def self.article_exists? (slug)
         Article.exists?(slug: slug)

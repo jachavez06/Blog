@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(articles_params)
     @article.make_publishable(articles_params) if publishing?
-    
+
     if @article.save
       flash[:success] = @@flash_messages[:created]
       redirect_to article_path(@article)
@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
 
   def update
     if publishing?
-      @article.make_publishable(articles_params) 
+      @article.make_publishable(articles_params)
     elsif unpublishing?
       @article.make_unpublishable(articles_params)
     else
@@ -67,12 +67,12 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       render 'edit'
-    end 
+    end
   end
 
-  # Load article if it exists in db. 
+  # Load article if it exists in db.
   def set_article
-    
+
     slug = params[:id]
 
     if Article.article_exists?(slug)
@@ -87,7 +87,7 @@ class ArticlesController < ApplicationController
   end
 
   def articles_params
-    
+
     params.require(:article).permit(:title, :content, :meta_data_title,
                                     :meta_data_description, :meta_data_keywords, :created_at, :updated_at)
   end
