@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     # Determine IP
     ip = request.remote_ip
 
-    # Set IP cookie. 
+    # Set IP cookie.
     session[:ip] = ip
 
     # Add User to table.
@@ -28,8 +28,4 @@ class ApplicationController < ActionController::Base
     session[:admin] == true
   end
 
-  rescue_from ActionController::RoutingError do |exception|
-    logger.error 'Routing error occurred'
-    render 'errors/404'
-   end
 end
