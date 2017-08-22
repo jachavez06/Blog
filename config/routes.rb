@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
+  get '/sitemap.xml', to: redirect("https://s3-us-west-2.amazonaws.com/jchavez-guides-sitemap/sitemaps/sitemap.xml.gz", status: 301)
+
 end
