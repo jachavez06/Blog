@@ -25,5 +25,6 @@
 /config/secrets.yml
 .byebug_history
 .rbenv-gemsets
+tags
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
