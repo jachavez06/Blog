@@ -6,8 +6,8 @@ SitemapGenerator::Sitemap.public_path = 'tmp/'
 
 # store on S3 using Fog
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(fog_provider: 'AWS',
-  aws_access_key_id: 'AKIAJUT56LXMC76RAPNA',
-  aws_secret_access_key: '=9/iprbxkohSBQBnKuPzgjZcovFDetzfZ7mok5TJ',
+  aws_access_key_id: 'AKIAIRJHO4YIJFGZ3J2Q',
+  aws_secret_access_key: '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',
   fog_directory: 'jchavez-guides-sitemap',
   fog_region: 'us-west-2')
 
