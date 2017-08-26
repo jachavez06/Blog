@@ -18,6 +18,7 @@
     <div class="col-4">
         <div class="panel panel-default ">
             <div class="panel-body">
+                <h5>Meta-data</h5>
                 <div class="form-group">
                     <%= f.label :Title %>
                     <%= f.text_field :meta_data_title, class:"form-control", placeholder: "Title", autofocus:true %>
@@ -30,7 +31,13 @@
                     <%= f.label :Keywords %>
                     <%= f.text_field :meta_data_keywords, class:"form-control", placeholder: "Keywords" %>
                 </div>
-                <hr> <!-- Fix overlap -->
+                <hr>
+                <h5>Tags</h5>
+                <div class="form-group">
+                    <%= f.text_field :all_tags, class:"form-control", placeholder: "Tags separated by commas" %>
+                </div>
+                <hr>
+                <h5>Timestamps</h5>
                 <div class="form-group">
                     <%= f.label :created_at %>:
                     <%= f.date_select :created_at, class:"form-control", placeholder: "Keywords" %>
@@ -39,9 +46,7 @@
                     <%= f.label :updated_at %>:
                     <%= f.date_select :updated_at, class:"form-control", placeholder: "Keywords" %>
                 </div>
-                <div class="form_group">
-                    <%= f.text_field :all_tags, placeholder: "Tags separated by commas" %>
-                </div>
+
                 <div class="float-sm-right">
                     <% if article.published? %>
                         <%= f.submit "Update", class: "btn btn-primary" %>

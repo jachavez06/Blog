@@ -1,8 +1,33 @@
 # Articles for the site.
 class Article < ApplicationRecord
+  # Callbacks
+  after_create :update_slug
+  before_update :assign_slug
 
+  # Regex
+  @keyword_regex = /\A([a-z]+|[0-9]+)(,\s([a-z]+|[0-9]+))*\z/i
+
+  # Associations
   has_many :taggings
   has_many :tags, through: :taggings
+
+  # Validations
+  validates :title, presence: true, uniqueness: { case_sensitive: false }
+  validates :content, presence: true
+  validates :meta_data_title, presence: true, uniqueness: { case_sensitive: false }
+  validates :meta_data_description, presence: true 
+  validates :meta_data_keywords, presence: true, format: { with: @keyword_regex,
+                                                        message: 'Invalid keyword format.' },
+                                                 length: { minimum: 3 }
+
+  # Check if Article has any tags associated with it.
+  def tags?
+    if self.tags.present?
+      return true
+    else
+      return false
+    end 
+  end
 
   # Used when form is processed
   def all_tags=(names)
@@ -12,46 +37,16 @@ class Article < ApplicationRecord
   end
 
   def all_tags
-    if self.tags.present?
-      to_return = '<span class="badge badge-pill badge-default">'
-      tags = self.tags.map(&:name).join('</span><span class="badge badge-pill badge-default">')
-      return to_return + tags + '</span>'
-    else
-      return ""
-    end
+    self.tags.map(&:name).join(', ')
   end
-  def tags?
-    if self.tags.present?
-      return true
-    else
-      return false
-    end 
-  end
-  # Body
-  validates :title, presence: true, uniqueness: { case_sensitive: false }
-  validates :content, presence: true
 
-  # Meta-data
-  @keyword_regex = /\A([a-z]+|[0-9]+)(,\s([a-z]+|[0-9]+))*\z/i
-  validates :meta_data_title, presence: true,
-                              uniqueness: { case_sensitive: false }
-  validates :meta_data_description, presence: true
-  validates :meta_data_keywords, presence: true,
-                                 format: { with: @keyword_regex,
-                                           message: 'Invalid keyword format.' },
-                                 length: { minimum: 3 }
-
-  after_create :update_slug
-  before_update :assign_slug
 
   def to_param
     slug
   end
 
   def make_publishable(articles_params)
-    assign_attributes(articles_params.merge(published: true,
-                                            created_at: Time.zone.now,
-                                            updated_at: Time.zone.now))
+    assign_attributes(articles_params.merge(published: true, created_at: Time.zone.now, updated_at: Time.zone.now))
   end
 
   def make_unpublishable(articles_params)
