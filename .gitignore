@@ -20,8 +20,8 @@
 /node_modules
 /yarn-error.log
 
-/config/database.yml
-/config/sitemap.rb
+#/config/database.yml
+#/config/sitemap.rb
 #/config/secrets.yml
 .byebug_history
 .rbenv-gemsets
