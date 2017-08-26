@@ -41,7 +41,7 @@
                 <% if @article.tags? %>
                     <h5 class="page-header" id="tag-header">Tags</h5>
                     <div>
-                        <%= raw @article.all_tags %>
+                        <%= raw @article.styled_tags %>
                     </div>
                 <% end %>
             </div>

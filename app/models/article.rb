@@ -40,6 +40,11 @@ class Article < ApplicationRecord
     self.tags.map(&:name).join(', ')
   end
 
+  def styled_tags
+    to_return = '<span class="badge badge-pill badge-default">'
+    tags = self.tags.map(&:name).join('</span><span class="badge badge-pill badge-default">')
+    return to_return + tags + '</span>'
+  end
 
   def to_param
     slug
