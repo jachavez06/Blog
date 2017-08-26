@@ -55,7 +55,7 @@
                         <%= f.submit "Publish", class: "btn btn-primary" %>
                         <%= f.submit "Save", class: "btn btn-default" %>
                     <% end %>
-                    <%= link_to "Cancel", request.referer.present? ? request.referer : default_path, class: "btn btn-secondary" %>
+                    <%= link_to "Cancel", article_path(@article), class: "btn btn-secondary" %>
                 </div>
             </div>
         </div>

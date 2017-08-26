@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
       @article.make_unpublishable(articles_params)
     else
       @article.assign_attributes(articles_params)
-      (flash[:info] = @@flash_messages[:no_change]) && render('edit') && return unless (@article.changed? || @article.tags.any? { |a| a.changed? })
+      (flash.now[:info] = @@flash_messages[:no_change]) && render('edit') && return unless (@article.changed? || @article.tags.any? { |a| a.changed? })
     end
     save_article
   end
