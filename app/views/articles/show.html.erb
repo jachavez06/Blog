@@ -38,12 +38,12 @@
                     <%= @article.updated_at.strftime('%B %d, %Y') %>
                 <% end %>
                 </span>
-                <h5 class="page-header" id="tag-header">Tags</h5>
-                <div>
-                <span class="badge badge-pill badge-default">
-                  <%= raw @article.all_tags %>
-                </span>
-                </div>
+                <% if @article.tags? %>
+                    <h5 class="page-header" id="tag-header">Tags</h5>
+                    <div>
+                        <%= raw @article.all_tags %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>

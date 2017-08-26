@@ -12,9 +12,21 @@ class Article < ApplicationRecord
   end
 
   def all_tags
-    self.tags.map(&:name).join('</span><span class="badge badge-pill badge-default"> ')
+    if self.tags.present?
+      to_return = '<span class="badge badge-pill badge-default">'
+      tags = self.tags.map(&:name).join('</span><span class="badge badge-pill badge-default">')
+      return to_return + tags + '</span>'
+    else
+      return ""
+    end
   end
-
+  def tags?
+    if self.tags.present?
+      return true
+    else
+      return false
+    end 
+  end
   # Body
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :content, presence: true
