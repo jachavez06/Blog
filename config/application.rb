@@ -14,6 +14,8 @@ module Blog
     config.autoload_paths += %W[#{config.root}/app/models/ckeditor]
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w[ckeditor/*]
+
+    # For custom exceptions routes
     config.exceptions_app = ->(env) { ExceptionsController.action(:exception).call(env) }
     #config.exception_handler = { dev: true }
     # Settings in config/environments/* take precedence over those specified here.
