@@ -60,6 +60,10 @@ GEM
     bindex (0.5.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    blazer (1.8.0)
+      chartkick
+      rails
+      safely_block (>= 0.1.1)
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
@@ -77,6 +81,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chartkick (2.2.4)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
     ckeditor (4.2.4)
@@ -338,6 +343,7 @@ DEPENDENCIES
   ahoy_matey
   bcrypt (= 3.1.11)
   binding_of_caller (= 0.7.2)
+  blazer
   bootstrap (= 4.0.0.alpha6)
   bullet (= 5.6.1)
   byebug (= 9.0.6)

@@ -31,6 +31,7 @@ gem 'ahoy_matey'
 gem 'bcrypt', '3.1.11'
 gem 'sitemap_generator'
 gem 'fog-aws'
+gem 'blazer'
 
 
 group :development do
