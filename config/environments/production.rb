@@ -88,7 +88,8 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger =
   # ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
-
+  ENV["BLAZER_DATABASE_URL"] = "postgres://ksxpkjjgwbyssf:a4d6e27342a2b7ef8e325ee4c7c0aa6233e690e711bb80b9e6536bb00a8cf9bf@ec2-54-83-205-71.compute-1.amazonaws.com:5432/d7pcpn152vb1hm:5432/database"
+  
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
