@@ -13,11 +13,19 @@ class SessionsController < ApplicationController
 
   def create
     if @admin && @authenticated
-      @admin.users << current_user
+      # Set admin cookie
       session[:admin] = true
-      ahoy.authenticate(@admin)
+
+      # Associate admin to current user
+      @admin.users << current_user
+
+      # Tell ahoy to track this change
+      #ahoy.authenticate(@admin)
+
+      # Redirect
       redirect_to articles_path
     else
+      # Respond with error message
       respond_to do |format|
         format.js { render 'create' }
       end
