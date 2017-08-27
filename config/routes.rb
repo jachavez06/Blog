@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get '/sitemap.xml', to: redirect("https://s3-us-west-2.amazonaws.com/jchavez-guides-sitemap/sitemaps/sitemap.xml.gz", status: 301)
   
   constraints AdminConstraint.new do  
-    mount Blazer::Engine, at: "blazer"
+    mount Blazer::Engine, at: "analytics"
   end
 end
