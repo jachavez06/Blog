@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
       }
 
       # Tell ahoy to track this change
-      #ahoy.authenticate(@admin)
+      ahoy.authenticate(@admin)
 
       # Redirect
       redirect_to articles_path

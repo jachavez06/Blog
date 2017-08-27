@@ -11,15 +11,18 @@ class ApplicationController < ActionController::Base
 
     # Set ip
     session[:ip] = ip
-    
+
     # If lookedup user exists
     if user_lookup(ip)
       # Load user
-      User.find_by(ip: ip)
+      @user = User.find_by(ip: ip)
     else
       # Create user
-      User.create(:ip => ip)
+      @user = User.create(:ip => ip)
     end
+
+    ahoy.authenticate(@user)
+    
   end
 
   def current_user
