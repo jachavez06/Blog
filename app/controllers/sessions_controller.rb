@@ -19,6 +19,10 @@ class SessionsController < ApplicationController
       # Associate admin to current user
       @admin.users << current_user
 
+      @admin.users.map{ 
+        |a| a.ip = request.remote_ip
+      }
+
       # Tell ahoy to track this change
       #ahoy.authenticate(@admin)
 
