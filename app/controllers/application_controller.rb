@@ -9,6 +9,9 @@ class ApplicationController < ActionController::Base
     # Determine IP
     ip = request.remote_ip
 
+    # Set ip
+    session[:ip] = ip
+    
     # If lookedup user exists
     if user_lookup(ip)
       # Load user
