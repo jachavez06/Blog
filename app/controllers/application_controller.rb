@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?, :admin?, :render_404
 
   def authenticate_user
-    byebug
+    
     # Do nothing if current_user is set.
     return if current_user.present?
 
