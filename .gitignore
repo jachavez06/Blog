@@ -28,3 +28,4 @@
 tags
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
+erd.pdf

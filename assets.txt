@@ -1,3 +1,6 @@
+Regenerate Database Visualization
+bundle exec erd
+
 heroku run rake sitemap:refresh
 
 RAILS_ENV=production bundle exec rake assets:precompile

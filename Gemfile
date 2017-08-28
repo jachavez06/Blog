@@ -35,6 +35,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'blazer'
 
+gem 'rails-erd', require: false, group: :development
 
 group :development do
   gem 'listen', '3.1.5'
