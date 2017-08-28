@@ -7,33 +7,19 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user
     # Determine IP
-    ip = request.remote_ip
+    @ip ||= request.remote_ip
 
-    # Set ip
-    session[:ip] = ip
 
-    # If lookedup user exists
-    if user_lookup(ip)
-      # Load user
-      @user = User.find_by(ip: ip)
-    else
-      # Create user
-      @user = User.create(:ip => ip)
-    end
+    @user = User.find_or_create_by(:ip => @ip)
 
     ahoy.authenticate(@user)
-    
   end
 
   def current_user
-    User.find_by(ip: request.remote_ip)
+    @current_user ||= User.find_by(ip: @ip)
   end
 
   def admin?
-    current_user.admin_id != nil
+    @admin ||= current_user.admin_id != nil
   end
-
-  def user_lookup(ip)
-    User.find_by(ip: ip)
-  end 
 end

@@ -5,6 +5,6 @@ class AdminConstraint
     end
   
     def current_user(request)
-        User.find_by(ip: request.session[:ip])
+        User.find_by(ip: request.remote_ip)
     end
 end
