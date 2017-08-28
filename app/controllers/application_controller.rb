@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    session[:admin] == true
+    current_user.admin_id != nil
   end
 
   def user_lookup(ip)
