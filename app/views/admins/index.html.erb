@@ -27,6 +27,12 @@
             </div>
 
             <div class="tab-pane" id="summaries" role="tabpanel">
+                <div class="btn-toolbar mb-3 pull-right" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <button type="button" class="btn btn-success">Analytics</button>
+                    </div>
+                </div>
+                <br>
                 <h4 class="card-title">Last Week's New Users</h4>
                 <%= line_chart charts_new_users_path %>
             </div>
