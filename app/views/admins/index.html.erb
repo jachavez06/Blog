@@ -2,24 +2,34 @@
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Articles</a>
+                <a class="nav-link active" data-toggle="tab" href="#articles" role="tab">Articles</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" data-toggle="tab" href="#summaries" role="tab">Summaries</a>
             </li>
         </ul>
     </div>
+
+
+
     <div class="card-block">
-        <h4 class="card-title">Unpublished</h4>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <%= render 'articles/article_list', obj: @unpublished %>
-                <%= will_paginate(@unpublished, :renderer => PaginateHelper::LinkRenderer) %>
+        <div class="tab-content">
+            <div class="tab-pane active" id="articles" role="tabpanel">
+        
+                <h4 class="card-title">Unpublished</h4>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <%= render 'articles/article_list', obj: @unpublished %>
+                        <%= will_paginate(@unpublished, :renderer => PaginateHelper::LinkRenderer) %>
+                    </div>
+                </div>
+                <%= link_to 'New', new_article_path(), class: "btn btn-success float-sm-right" %>
             </div>
-        </div>
-        <%= link_to 'New', new_article_path(), class: "btn btn-success float-sm-right" %>
+
+            <div class="tab-pane" id="summaries" role="tabpanel">
+                <h4 class="card-title">New Users</h4>
+                <%= line_chart charts_new_users_path %>
+            </div>
+
     </div>
 </div>
-
-<%= line_chart charts_new_users_path %>
-<!-- "/charts/new-users" -->
