@@ -132,6 +132,8 @@ GEM
       terminal-table
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    groupdate (3.2.0)
+      activesupport (>= 3)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.8.6)
@@ -348,9 +350,11 @@ DEPENDENCIES
   bullet (= 5.6.1)
   byebug (= 9.0.6)
   capybara (= 2.15.1)
+  chartkick
   ckeditor (= 4.2.4)
   coffee-rails (= 4.2.2)
   fog-aws
+  groupdate
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
   listen (= 3.1.5)
