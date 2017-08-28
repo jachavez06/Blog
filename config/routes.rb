@@ -12,4 +12,9 @@ Rails.application.routes.draw do
   constraints AdminConstraint.new do  
     mount Blazer::Engine, at: "analytics"
   end
+
+  namespace :charts do 
+    get 'new-users'
+  end 
+
 end
