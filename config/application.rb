@@ -17,6 +17,9 @@ module Blog
 
     # For custom exceptions routes
     config.exceptions_app = ->(env) { ExceptionsController.action(:exception).call(env) }
+
+    Groupdate.week_start = :mon # first three letters of day
+    
     #config.exception_handler = { dev: true }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
