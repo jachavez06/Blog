@@ -40,12 +40,8 @@
 }
 .intro-header .site-heading #welcome_header {
   margin-top: 0;
-  margin-left: 200px;
-  margin-right: 200px;
   font-size: 50px;
-  border-bottom: 2px solid white;
-  
-  
+  //border-bottom: 2px solid white;
 }
 .intro-header .site-heading .subheading {
   font-size: 24px;
@@ -62,4 +58,12 @@
   .intro-header .site-heading{
     padding: 150px 0;
   }
+}
+#welcome-head-sep{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#welcome-head-sep > hr {
+  border-top: 1px solid white;
+  margin-top: -15px;
 }
