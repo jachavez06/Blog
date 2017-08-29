@@ -27,7 +27,7 @@ gem 'coffee-rails', '4.2.2'
 gem 'jbuilder', '2.7.0'
 gem 'turbolinks', '5.0.1'
 
-gem 'ahoy_matey'
+gem 'ahoy_matey' 
 gem 'bcrypt', '3.1.11'
 gem 'sitemap_generator'
 gem 'fog-aws'
