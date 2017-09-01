@@ -67,9 +67,20 @@
   border-top: 1px solid white;
   margin-top: -15px;
 }
-.circled-number {
+.numberCircle {
   border-radius: 50%;
   behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+  padding: 1px 8px;
+  background: #fff;
+  border: 2px solid #666;
+  color: #666;
+  text-align: center;
+}
+
+/*
+.circled-number {
+  border-radius: 50%;
+  behavior: url(PIE.htc); /* remove if you don't care about IE8 
 
   width: 36px;
   height: 36px;
@@ -84,3 +95,4 @@
   -webkit-box-sizing: initial;
   box-sizing: initial;
 }
+*/
