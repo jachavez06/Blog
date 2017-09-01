@@ -67,17 +67,27 @@
   border-top: 1px solid white;
   margin-top: -15px;
 }
+.step-header {
+  background-color: #FFFFFF;
+  color: #ea1775;
+  font-weight: bolder;
+  text-transform: capitalize;
+  font-family: arial;
+  font-style: normal;
+}
 .circled-number {
   border-radius: 50%;
   behavior: url(PIE.htc); /* remove if you don't care about IE8 */
-  padding: 1px 8px;
-  background: #fff;
-  border: 2px solid #666;
-  color: #666;
+  padding: 4px 10px;
+  border: 2px solid;
   text-align: center;
   margin-right: 5px;
+  font-size: 20px;
 }
-
+.step-header-text {
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
 /*
 .circled-number {
   border-radius: 50%;
