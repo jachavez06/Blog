@@ -5,4 +5,8 @@ CKEDITOR.editorConfig = function (config) {
     config.height = 500; 
     config.extraPlugins = 'codemirror';
     config.contentsCss = '/assets/ckeditor/contents.scss';
+    config.codemirror = {
+        autoFormatOnStart: false,
+        autoFormatOnModeChange: false
+    }
 }
