@@ -58,8 +58,8 @@
                         <%= f.submit "Publish", class: "btn btn-primary" %>
                         <%= f.submit "Save", class: "btn btn-default" %>
                     <% end %>
-                 
-                    <% if params[:action] == "new" %>
+                    <% byebug %>
+                    <% if params[:action] == "new" || params[:action] == "create" %>
                         <%= link_to "Cancel", admin_path, class: "btn btn-secondary" %>
                     <% else %>
                         <%= link_to "Cancel", article_path(@article), class: "btn btn-secondary" %>
