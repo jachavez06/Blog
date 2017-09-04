@@ -109,5 +109,4 @@ class ArticlesController < ApplicationController
   def unpublishing?
     params[:commit] == 'Unpublish'
   end
-
 end

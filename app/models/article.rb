@@ -51,23 +51,25 @@ class Article < ApplicationRecord
   end
 
   def make_publishable(articles_params)
-    assign_attributes(articles_params.merge(published: true, created_at: Time.zone.now, updated_at: Time.zone.now))
+    assign_attributes(articles_params.merge(published: true,
+                                            created_at: Time.zone.now,
+                                            updated_at: Time.zone.now))
   end
 
   def make_unpublishable(articles_params)
     assign_attributes(articles_params.merge(published: false))
   end
 
-    # Check if article exists by looking up slug.
-    # Returns article object if exists.
-    def self.article_exists? (slug)
-        Article.exists?(slug: slug)
-    end
+  # Check if article exists by looking up slug.
+  # Returns article object if exists.
+  def self.article_exists?(slug)
+    Article.exists?(slug: slug)
+  end
 
-    # action to check if article is published
-    def self.article_published? (article)
-        article.published
-    end
+  # action to check if article is published
+  def self.article_published?(article)
+    article.published
+  end
 
   private
 
