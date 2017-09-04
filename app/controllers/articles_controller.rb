@@ -1,10 +1,11 @@
 # Controller for articles to be published.
 class ArticlesController < ApplicationController
+
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
 
-  @@flash_messages =
+  @@flash_messages = 
     { updated: 'Article was successfully updated!',
       no_change: 'Article was not updated because no changes were made!',
       created:  'Article was successfully created!',

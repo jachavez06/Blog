@@ -11,16 +11,25 @@ class Article < ApplicationRecord
   has_many :taggings
   has_many :tags, through: :taggings
 
-  # Validations
-  validates :title, presence: true, uniqueness: { case_sensitive: false }
-  validates :content, presence: true
-  validates :meta_data_title, presence: true, uniqueness: { case_sensitive: false }
-  validates :meta_data_description, presence: true 
-  validates :meta_data_keywords, presence: true, format: { with: @keyword_regex,
-                                                        message: 'Invalid keyword format.' },
-                                                 length: { minimum: 3 }
+  # VALIDATIONS
+  # Drafts
+  article.validates :title, presence: true, uniqueness: { case_sensitive: false }
+  article.validates :content, presence: true
 
-  # Check if Article has any tags associated with it.
+  # Published
+  with_options :if => 'self.published' do |article|
+    article.validates :meta_data_title, presence: true,
+                                        uniqueness: { case_sensitive: false }
+    article.validates :meta_data_description, presence: true
+    article.validates :meta_data_keywords,
+                      presence: true,
+                      format: { with: @keyword_regex,
+                                message: 'Invalid keyword format.' },
+                      length: { minimum: 3 }
+  end
+
+
+  # Check if Article has any tags associated with it
   def tags?
     if self.tags.present?
       return true
