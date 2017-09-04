@@ -13,8 +13,8 @@ class Article < ApplicationRecord
 
   # VALIDATIONS
   # Drafts
-  article.validates :title, presence: true, uniqueness: { case_sensitive: false }
-  article.validates :content, presence: true
+  validates :title, presence: true, uniqueness: { case_sensitive: false }
+  validates :content, presence: true
 
   # Published
   with_options :if => 'self.published' do |article|
