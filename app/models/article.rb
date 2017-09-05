@@ -78,7 +78,7 @@ class Article < ApplicationRecord
 
   # action to check if article is published
   def self.article_published?(article)
-    article.published
+    article.published?
   end
 
   private
