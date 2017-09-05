@@ -28,13 +28,10 @@ class Article < ApplicationRecord
                       length: { minimum: 3 }
   end
 
-  # Check if Article has any tags associated with it
+  # Checks that object has at least one tag 
   def tags?
-    if self.tags.present?
-      return true
-    else
-      return false
-    end 
+    return false unless tags.present?
+    true
   end
 
   # Used when form is processed
