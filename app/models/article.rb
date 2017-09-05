@@ -10,7 +10,7 @@ class Article < ApplicationRecord
   @keyword_regex = /\A([a-z]+|[0-9]+)(,\s([a-z]+|[0-9]+))*\z/i
 
   # Associations
-  acts_as_taggable
+  acts_as_taggable_on :tags
   # VALIDATION
   # Draft
   validates :title, presence: true, uniqueness: { case_sensitive: false }
@@ -53,9 +53,17 @@ class Article < ApplicationRecord
     assign_attributes(articles_params.merge(state: :draft))
   end
 
-  ### STATE ### 
+  ### STATE ###
+  # Does an article with the given slug exist?
   def self.article_exists?(slug)
     Article.exists?(slug: slug)
+  end
+
+  def edited?
+    @current_tag_list = tag_list
+    @saved_tag_list = Article.find(id).tag_list
+    @tags_diff = @current_tag_list - @saved_tag_list
+    changed? || @tags_diff.present?
   end
 
   ### SLUG ###

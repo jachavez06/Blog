@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article.assign_attributes(articles_params)
-    if @article.changed?
+    if @article.edited?
       flash[:success] = 'Yes'
     else
       flash[:danger] = 'No'

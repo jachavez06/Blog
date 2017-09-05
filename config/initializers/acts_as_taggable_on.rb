@@ -2,3 +2,7 @@
 
 # Removes tag from table if count hits 0
 ActsAsTaggableOn.remove_unused_tags = true
+
+ActsAsTaggableOn.force_binary_collation = true
+
+ActsAsTaggableOn.delimiter = ','
