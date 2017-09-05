@@ -47,12 +47,19 @@ class ArticlesController < ApplicationController
 
   def update
     @article.assign_attributes(articles_params)
-    if @article.edited?
-      flash[:success] = 'Yes'
+    if publishing?
+      @article.make_publishable(articles_params)
+    elsif unpublishing?
+      @article.make_unpublishable(articles_params)
     else
-      flash[:danger] = 'No'
+      @article.assign_attributes(articles_params)
+      unless @article.edited?
+        (flash.now[:info] = @@flash_messages[:no_change])
+        render('edit')
+        return
+      end
     end
-    render 'edit'
+    save_article
   end
 
   def destroy
