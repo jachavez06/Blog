@@ -37,7 +37,7 @@ class Article < ApplicationRecord
   # Styles tags to display on Article's show page
   def styled_tags
     to_return = '<span class="badge badge-pill badge-default">'
-    tags = self.tags.map(&:name).join('</span><span class="badge badge-pill badge-default">')
+    tags = tag_list.join('</span><span class="badge badge-pill badge-default">')
     to_return + tags + '</span>'
   end
 
@@ -59,11 +59,6 @@ class Article < ApplicationRecord
   # Returns article object if exists.
   def self.article_exists?(slug)
     Article.exists?(slug: slug)
-  end
-
-  # action to check if article is published
-  def self.article_published?(article)
-    article.published?
   end
 
   private
