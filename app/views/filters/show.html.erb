@@ -1,0 +1,12 @@
+<h1>Tags</h1>
+
+<div class="row">
+    <div class="col-8">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <%= render 'articles/article_list', obj: @articles %>
+                <%= will_paginate(@articles, :renderer => PaginateHelper::LinkRenderer) %>
+            </div>
+        </div>
+    </div>
+</div>
