@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170827023407) do
+ActiveRecord::Schema.define(version: 20170905010336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20170827023407) do
     t.string "meta_data_title"
     t.string "meta_data_description"
     t.string "meta_data_keywords"
-    t.boolean "published", default: false
+    t.integer "state", default: 0
   end
 
   create_table "blazer_audits", force: :cascade do |t|
