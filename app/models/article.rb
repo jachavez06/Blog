@@ -10,8 +10,7 @@ class Article < ApplicationRecord
   @keyword_regex = /\A([a-z]+|[0-9]+)(,\s([a-z]+|[0-9]+))*\z/i
 
   # Associations
-  has_many :taggings
-  has_many :tags, through: :taggings
+
 
   # VALIDATION
   # Draft
