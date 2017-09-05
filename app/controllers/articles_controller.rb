@@ -1,7 +1,7 @@
 # Controller for articles to be published.
 class ArticlesController < ApplicationController
   include Publishable
-  
+  include Trackable
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
@@ -98,9 +98,5 @@ class ArticlesController < ApplicationController
     return unless !admin?
     flash[:danger] = 'Only admin users can perform that action!'
     redirect_to root_path
-  end
-
-  def no_index
-    set_meta_tags nofollow: true
   end
 end
