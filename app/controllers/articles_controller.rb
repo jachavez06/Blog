@@ -77,7 +77,6 @@ class ArticlesController < ApplicationController
 
   # Load article if it exists in db.
   def set_article
-
     slug = params[:id]
 
     if Article.article_exists?(slug)
