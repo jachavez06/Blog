@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
-  impressionist :actions=>[:show]
+  impressionist 
 
   @@flash_messages = 
     { updated: 'Article was successfully updated!',
@@ -45,6 +45,7 @@ class ArticlesController < ApplicationController
     set_meta_tags description: @article.meta_data_description
     set_meta_tags keywords: @article.meta_data_keywords
     set_meta_tags canonical: request.original_url
+    impressionist(@article)
   end
 
   def update
