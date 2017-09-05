@@ -14,22 +14,21 @@ class Article < ApplicationRecord
   has_many :tags, through: :taggings
 
   # VALIDATION
-  # Drafts
+  # Draft
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :content, presence: true
 
   # Published
-  #with_options :if => false do |article|
-  #  article.validates :meta_data_title, presence: true,
-  #                                      uniqueness: { case_sensitive: false }
-  #  article.validates :meta_data_description, presence: true
-  #  article.validates :meta_data_keywords,
-  #                    presence: true,
-  #                    format: { with: @keyword_regex,
-  #                              message: 'Invalid keyword format.' },
-  #                    length: { minimum: 3 }
-  #end
-
+  with_options if: :published? do |article|
+    article.validates :meta_data_title, presence: true,
+                                        uniqueness: { case_sensitive: false }
+    article.validates :meta_data_description, presence: true
+    article.validates :meta_data_keywords,
+                      presence: true,
+                      format: { with: @keyword_regex,
+                                message: 'Invalid keyword format.' },
+                      length: { minimum: 3 }
+  end
 
   # Check if Article has any tags associated with it
   def tags?
