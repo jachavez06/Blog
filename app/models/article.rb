@@ -1,5 +1,6 @@
 # Articles for the site.
 class Article < ApplicationRecord
+  is_impressionable
   # Callbacks
   after_create :update_slug
   before_update :assign_slug
