@@ -1,5 +1,6 @@
 require 'active_support/concern'
 
+# Concerns anything that can have multiple states (e.g. draft vs published).
 module Publishable 
   extend ActiveSupport::Concern
 
