@@ -1,6 +1,6 @@
 <br>
 <%= link_to 'Article Listings', articles_path(), class: "btn btn-primary" %>
-<% if admin? %>
+<% if session[:admin] == true %>
     <div class="float-sm-right">
         <%= render "article_actions", :article_id => article.id   %>
     </div>
