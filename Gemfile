@@ -35,6 +35,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'blazer'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
+gem 'impressionist'
 
 
 gem 'rails-erd', require: false, group: :development
