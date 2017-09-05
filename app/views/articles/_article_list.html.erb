@@ -2,15 +2,7 @@
     <div class="lesson-card">
         <div class="row">
             <div class="col-12">
-                <div class="article-index-title outline">
-                    <%= link_to article.title, article_path(article) %>
-                </div>
-                <div>
-                    Published on: <%= article.created_at.strftime("%b %d, %Y") %>
-                </div>
-                <div class="article-index-body outline">
-                    <%= article.meta_data_description %>
-                </div>
+                <%= render "article_card", :article => article %>
             </div>
         </div>
     </div>
