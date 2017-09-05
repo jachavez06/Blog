@@ -34,6 +34,8 @@ gem 'fog-aws'
 gem 'chartkick'
 gem 'groupdate'
 gem 'blazer'
+gem 'acts-as-taggable-on', '~> 4.0'
+
 
 gem 'rails-erd', require: false, group: :development
 
