@@ -10,8 +10,7 @@ class Article < ApplicationRecord
   @keyword_regex = /\A([a-z]+|[0-9]+)(,\s([a-z]+|[0-9]+))*\z/i
 
   # Associations
-
-
+  acts_as_taggable
   # VALIDATION
   # Draft
   validates :title, presence: true, uniqueness: { case_sensitive: false }
