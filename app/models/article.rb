@@ -28,27 +28,17 @@ class Article < ApplicationRecord
                       length: { minimum: 3 }
   end
 
-  # Checks that object has at least one tag 
+  # Checks that object has at least one tag
   def tags?
     return false unless tags.present?
     true
   end
 
-  # Used when form is processed
-  def all_tags=(names)
-    self.tags = names.split(',').map do |name|
-      Tag.where(name: name.strip).first_or_create!
-    end
-  end
-
-  def all_tags
-    self.tags.map(&:name).join(', ')
-  end
-
+  # Styles tags to display on Article's show page
   def styled_tags
     to_return = '<span class="badge badge-pill badge-default">'
     tags = self.tags.map(&:name).join('</span><span class="badge badge-pill badge-default">')
-    return to_return + tags + '</span>'
+    to_return + tags + '</span>'
   end
 
   def to_param
