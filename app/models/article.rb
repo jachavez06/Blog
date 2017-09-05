@@ -4,6 +4,8 @@ class Article < ApplicationRecord
   after_create :update_slug
   before_update :assign_slug
 
+  # Enum
+  enum state: %i( :draft, :published )
   # Regex
   @keyword_regex = /\A([a-z]+|[0-9]+)(,\s([a-z]+|[0-9]+))*\z/i
 
@@ -11,7 +13,7 @@ class Article < ApplicationRecord
   has_many :taggings
   has_many :tags, through: :taggings
 
-  # VALIDATIONS
+  # VALIDATION
   # Drafts
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :content, presence: true
