@@ -4,6 +4,7 @@ require 'active_support/concern'
 module Trackable
   extend ActiveSupport::Concern
 
+  # Tells crawlers not to index a given page.
   def no_index
     set_meta_tags nofollow: true
   end
