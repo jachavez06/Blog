@@ -16,9 +16,8 @@
             </div>
             <div class="card-block">
                 <% @tags.each do |tag| %>
-                   <%= tag.name %>
+                   <%= link_to "#{tag.name}", articles_with_tags_path(id: tag.id) %>
                    (<%= tag.taggings_count %>)<br>
-                   <%= link_to "Test", articles_path(tag: tag.id) %>
                 <% end %>
             </div>
         </div>
