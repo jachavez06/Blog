@@ -1,25 +1,25 @@
 <h1><%= title 'Listing Articles' %></h1>
 
-    <div class="row">
-        <div class="col-8">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <%= render 'article_list', obj: @articles %>
-                    <%= will_paginate(@articles, :renderer => PaginateHelper::LinkRenderer) %>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-header">
-                    Tags
-                </div>
-                <div class="card-block">
-                    <blockquote class="card-blockquote">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                    </blockquote>
-                </div>
+<div class="row">
+    <div class="col-8">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <%= render 'article_list', obj: @articles %>
+                <%= will_paginate(@articles, :renderer => PaginateHelper::LinkRenderer) %>
             </div>
         </div>
     </div>
+    <div class="col-3 offset-1">
+        <div class="card">
+            <div class="card-header text-center">
+                Tags
+            </div>
+            <div class="card-block">
+                <% @tags.each do |tag| %>
+                   <%= tag.name %>
+                   (<%= tag.taggings_count %>)<br>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

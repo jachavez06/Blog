@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.where(state: 1).paginate(:page => params[:page], :per_page => 10).order(created_at: :desc)
+    @tags = ActsAsTaggableOn::Tag.all
     set_meta_tags description: 'A list of all the tutorials I have written.'
     set_meta_tags keywords: 'Blog, Code, Tutorial, Guide, Example, Program'
   end
