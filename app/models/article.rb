@@ -19,16 +19,16 @@ class Article < ApplicationRecord
   validates :content, presence: true
 
   # Published
-  with_options :if => 'self.published' do |article|
-    article.validates :meta_data_title, presence: true,
-                                        uniqueness: { case_sensitive: false }
-    article.validates :meta_data_description, presence: true
-    article.validates :meta_data_keywords,
-                      presence: true,
-                      format: { with: @keyword_regex,
-                                message: 'Invalid keyword format.' },
-                      length: { minimum: 3 }
-  end
+  #with_options :if => false do |article|
+  #  article.validates :meta_data_title, presence: true,
+  #                                      uniqueness: { case_sensitive: false }
+  #  article.validates :meta_data_description, presence: true
+  #  article.validates :meta_data_keywords,
+  #                    presence: true,
+  #                    format: { with: @keyword_regex,
+  #                              message: 'Invalid keyword format.' },
+  #                    length: { minimum: 3 }
+  #end
 
 
   # Check if Article has any tags associated with it
@@ -62,13 +62,13 @@ class Article < ApplicationRecord
   end
 
   def make_publishable(articles_params)
-    assign_attributes(articles_params.merge(published: true,
+    assign_attributes(articles_params.merge(state: :published,
                                             created_at: Time.zone.now,
                                             updated_at: Time.zone.now))
   end
 
   def make_unpublishable(articles_params)
-    assign_attributes(articles_params.merge(published: false))
+    assign_attributes(articles_params.merge(state: :draft))
   end
 
   # Check if article exists by looking up slug.
