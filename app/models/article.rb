@@ -5,7 +5,7 @@ class Article < ApplicationRecord
   before_update :assign_slug
 
   # Enum
-  enum state: %i( :draft, :published )
+  enum state: %i[draft published]
   # Regex
   @keyword_regex = /\A([a-z]+|[0-9]+)(,\s([a-z]+|[0-9]+))*\z/i
 
