@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
+  impressionist :actions=>[:show]
 
   @@flash_messages = 
     { updated: 'Article was successfully updated!',
