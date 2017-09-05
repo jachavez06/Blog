@@ -28,6 +28,7 @@ class Article < ApplicationRecord
                       length: { minimum: 3 }
   end
 
+  ### TAGS ###
   # Checks that object has at least one tag
   def tags?
     return false unless tags.present?
@@ -41,10 +42,7 @@ class Article < ApplicationRecord
     to_return + tags + '</span>'
   end
 
-  def to_param
-    slug
-  end
-
+  ### PUBLISH ###
   def make_publishable(articles_params)
     assign_attributes(articles_params.merge(state: :published,
                                             created_at: Time.zone.now,
@@ -55,10 +53,14 @@ class Article < ApplicationRecord
     assign_attributes(articles_params.merge(state: :draft))
   end
 
-  # Check if article exists by looking up slug.
-  # Returns article object if exists.
+  ### STATE ### 
   def self.article_exists?(slug)
     Article.exists?(slug: slug)
+  end
+
+  ### SLUG ###
+  def to_param
+    slug
   end
 
   private
