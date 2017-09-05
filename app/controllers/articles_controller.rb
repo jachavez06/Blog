@@ -2,6 +2,7 @@
 class ArticlesController < ApplicationController
   include Publishable
   include Trackable
+  include Viewable
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
@@ -92,11 +93,5 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :content, :meta_data_title,
                                     :meta_data_description, :meta_data_keywords,
                                     :created_at, :updated_at, :all_tags)
-  end
-
-  def require_admin
-    return unless !admin?
-    flash[:danger] = 'Only admin users can perform that action!'
-    redirect_to root_path
   end
 end
