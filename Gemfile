@@ -34,7 +34,7 @@ gem 'fog-aws'
 gem 'chartkick'
 gem 'groupdate'
 gem 'blazer'
-gem 'acts-as-taggable-on', '~> 4.0'
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
 
 gem 'rails-erd', require: false, group: :development
