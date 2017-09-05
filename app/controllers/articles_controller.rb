@@ -29,6 +29,7 @@ class ArticlesController < ApplicationController
       flash[:success] = @@flash_messages[:created]
       redirect_to article_path(@article)
     else
+      @article.state = :draft
       render 'new'
     end
   end
