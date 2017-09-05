@@ -1,11 +1,19 @@
 // Place all the styles related to the Article controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.article-card:hover {
+    //background-color:red;
+}
 .article-card-title {
     font-size: 26px;
     font-family: "Istok Web";
 }
-
+.article-card-title > a {
+    color: #31708f;
+}
+.article-card-title > a:hover {
+    color: #2c9ebf;
+}
 .article-card-date {
     color: #464a4c;
     font-size: small;
