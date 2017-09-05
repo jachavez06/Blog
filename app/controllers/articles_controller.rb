@@ -1,6 +1,7 @@
 # Controller for articles to be published.
 class ArticlesController < ApplicationController
-
+  include Publishable
+  
   before_action :set_article, only: %i[edit update show destroy]
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
@@ -102,13 +103,5 @@ class ArticlesController < ApplicationController
 
   def no_index
     set_meta_tags nofollow: true
-  end
-
-  def publishing?
-    params[:commit] == 'Publish'
-  end
-
-  def unpublishing?
-    params[:commit] == 'Unpublish'
   end
 end
