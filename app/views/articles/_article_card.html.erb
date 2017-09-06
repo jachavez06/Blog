@@ -5,7 +5,7 @@
                 <%= link_to article.title, article_path(article) %>
             </div>
             <div class="article-card-date">
-                Published on: <%= article.created_at.strftime("%b %d, %Y") %>
+                <%= article.created_at.strftime("%b %d, %Y") %>
             </div>
             <div class="article-card-body">
                 <%= article.meta_data_description %>
