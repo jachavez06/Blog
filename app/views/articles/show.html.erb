@@ -1,8 +1,7 @@
 <div id="article-url" value="<%= request.original_url %>" style="display:none"></div>
 <div id="article-id" value="<%= @article.id %>" style="display:none"></div>
 
-<h1><%= @article.title %>
-<%= @article.impressionist_count(filter: :ip_address) %></h1>
+<h1><%= @article.title %></h1>
 <div class="row">
     <div class="col col-md-8">
 
@@ -27,11 +26,7 @@
 
     <!-- Sidebar -->
     <div class="col-12 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <%= render 'article_information', :article => @article %>
-            </div>
-        </div>
+        <%= render 'article_information', :article => @article %>
     </div>
 </div>
 <!-- End Row -->
