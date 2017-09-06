@@ -1,6 +1,6 @@
 # Articles for the site.
 class Article < ApplicationRecord
-  is_impressionable
+  is_impressionable :counter_cache => true, :column_name => :impressions_count, :unique => true
   # Callbacks
   after_create :update_slug
   before_update :assign_slug
