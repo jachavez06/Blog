@@ -9,4 +9,17 @@
             </div>
         </div>
     </div>
+    <div class="col-3 offset-1">
+        <div class="card">
+            <div class="card-header text-center">
+               Topics 
+            </div>
+            <div class="card-block">
+                <% @tags.each do |tag| %>
+                   <%= link_to "#{tag.name}", articles_with_tags_path(tag: tag.name) %>
+                   (<%= tag.taggings_count %>)<br>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </div>
