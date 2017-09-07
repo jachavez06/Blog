@@ -14,7 +14,7 @@ class Article < ApplicationRecord
   # Associations
   acts_as_taggable_on :tags
 
-  # VALIDATION
+  ### BEGIN VALIDATIONS ###
   # Draft
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :content, presence: true
@@ -30,7 +30,7 @@ class Article < ApplicationRecord
                                 message: 'Invalid keyword format.' },
                       length: { minimum: 3 }
   end
-  ##########
+  #### END VALIDATIONS ####
 
   ### BEGIN SCOPES ###
   scope :published, -> { where(state: :published) }
@@ -49,8 +49,9 @@ class Article < ApplicationRecord
     tags = tag_list.join('</span><span class="badge badge-pill badge-default">')
     to_return + tags + '</span>'
   end
+  #### END TAGS ####
 
-  ### PUBLISH ###
+  ### ACTIONS ###
   def make_publishable(articles_params)
     assign_attributes(articles_params.merge(state: :published,
                                             created_at: Time.zone.now,
@@ -60,8 +61,9 @@ class Article < ApplicationRecord
   def make_unpublishable(articles_params)
     assign_attributes(articles_params.merge(state: :draft))
   end
+  #### END ACTIONS ####
 
-  ### STATE ###
+  ### BEGION STATE ###
   # Does an article with the given slug exist?
   def self.article_exists?(slug)
     Article.exists?(slug: slug)
@@ -73,11 +75,13 @@ class Article < ApplicationRecord
     @tags_diff = @current_tag_list - @saved_tag_list
     changed? || @tags_diff.present?
   end
+  #### END STATE ####
 
-  ### SLUG ###
+  ### BEGIN SLUG ###
   def to_param
     slug
   end
+  #### END SLUG ####
 
   private
 
