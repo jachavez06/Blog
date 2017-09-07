@@ -10,6 +10,22 @@ class FiltersController < ApplicationController
   private
 
   def require_published
+    # Save param so don't have to access it again
+    @tag = params[:tag]
 
+    # Grab only published articles
+    @articles = Article.published
+
+    # Generate tags on published files
+    @tags = []
+
+    @articles.each do |a|
+      a.tag_list.map { |b| @tags << b }
+    end
+
+    return if @tags.include? @tag
+
+    # If they reach this point, then they tried to reach a tag that has not been published or does not exist
+    redirect_to root_path
   end
 end
