@@ -1,6 +1,7 @@
 # Articles for the site.
 class Article < ApplicationRecord
   is_impressionable :counter_cache => true, :column_name => :impressions_count, :unique => true
+
   # Callbacks
   after_create :update_slug
   before_update :assign_slug
@@ -12,6 +13,7 @@ class Article < ApplicationRecord
 
   # Associations
   acts_as_taggable_on :tags
+
   # VALIDATION
   # Draft
   validates :title, presence: true, uniqueness: { case_sensitive: false }
@@ -28,6 +30,11 @@ class Article < ApplicationRecord
                                 message: 'Invalid keyword format.' },
                       length: { minimum: 3 }
   end
+  ##########
+
+  ### BEGIN SCOPES ###
+  scope :published, -> { where(state: :published) }
+  #### END SCOPES ####
 
   ### TAGS ###
   # Checks that object has at least one tag
