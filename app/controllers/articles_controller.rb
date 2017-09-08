@@ -14,8 +14,17 @@ class ArticlesController < ApplicationController
       save_error: 'An internal error occured while trying to save  changes!' }
 
   def index
-    @articles = Article.where(state: 1).paginate(:page => params[:page], :per_page => 10).order(created_at: :desc)
-    @tags = @articles.tag_counts_on(:tags)
+    # Load cache
+    published = Rails.cache.read('published_articles')
+
+    # Articles
+    @articles = published.paginate(page: params[:page], per_page: 10)
+    @articles = @articles.order(created_at: :desc)
+
+    # Tags
+    @tags = published.tag_counts_on(:tags)
+
+    # Metadata
     set_meta_tags description: 'A list of all the tutorials I have written.'
     set_meta_tags keywords: 'Blog, Code, Tutorial, Guide, Example, Program'
   end
