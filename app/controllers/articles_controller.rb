@@ -30,20 +30,29 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    # Create new article object so user can populate
     @article = Article.new
   end
 
   def create
+    # Create article from input params
     @article = Article.new(articles_params)
 
+    # Set state if publishing
     update_state if publishing?
 
+    # Attempt to save article
     if @article.save
+      # Flash message
       flash[:success] = @@flash_messages[:created]
+
+      # Redirect to article's show page
       redirect_to article_path(@article)
     else
-      # Revert make_publishable
+      # Undo make_publishable if occurred
       @article.state = :draft
+
+      # Render new action so they can fix errors
       render 'new'
     end
   end
@@ -68,6 +77,9 @@ class ArticlesController < ApplicationController
     # Update attributes
     @article.assign_attributes(articles_params)
 
+    # Hold previous state in case update fails
+    @previous_state = @article.state
+
     # Content does not need to be updated
     if publishing? || unpublishing?
       update_state
@@ -82,16 +94,16 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     flash[:danger] = 'Article was sucessfully deleted!'
-    redirect_to articles_path
+    redirect_back fallback_location: articles_path
   end
 
   private
 
   def update_state
     if publishing?
-      @article.make_publishable(articles_params)
+      @article.make_publishable
     else
-      @article.make_unpublishable(articles_params)
+      @article.make_unpublishable
     end
   end
 
@@ -105,6 +117,8 @@ class ArticlesController < ApplicationController
       flash[:success] = @@flash_messages[:updated]
       redirect_to article_path(@article)
     else
+      # Revert to previous state
+      @article.state = @previous_state
       render 'edit'
     end
   end

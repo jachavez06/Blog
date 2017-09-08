@@ -54,23 +54,17 @@ class Article < ApplicationRecord
   #### END TAGS ####
 
   ### ACTIONS ###
-  def make_publishable(articles_params)
-    assign_attributes(articles_params.merge(state: :published,
-                                            created_at: Time.zone.now,
-                                            updated_at: Time.zone.now))
+  def make_publishable
+    assign_attributes(state: :published, created_at: Time.zone.now,
+                      updated_at: Time.zone.now)
   end
 
-  def make_unpublishable(articles_params)
-    assign_attributes(articles_params.merge(state: :draft))
+  def make_unpublishable
+    assign_attributes(state: :draft)
   end
   #### END ACTIONS ####
 
   ### BEGION STATE ###
-  # Does an article with the given slug exist?
-  def self.article_exists?(slug)
-    Article.exists?(slug: slug)
-  end
-
   def edited?
     @current_tag_list = tag_list
     @saved_tag_list = Article.find(id).tag_list
