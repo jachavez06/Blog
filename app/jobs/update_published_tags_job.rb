@@ -12,6 +12,6 @@ class UpdatePublishedTagsJob < ApplicationJob
     @articles.each do |a|
       a.tag_list.map { |b| @tags << b }
     end
-    Rails.cache.write('published_tags', @tags) 
+    Rails.cache.write('published_tags', @tags)
   end
 end

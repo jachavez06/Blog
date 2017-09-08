@@ -5,6 +5,7 @@ class Article < ApplicationRecord
   # Callbacks
   after_create :update_slug
   before_update :assign_slug
+  after_save :update_published_articles
 
   # Enum
   enum state: %i[draft published]
@@ -91,5 +92,9 @@ class Article < ApplicationRecord
 
   def update_slug
     update_attributes slug: assign_slug
+  end
+
+  def update_published_articles
+    UpdatePublishedArticlesJob.perform_now
   end
 end
