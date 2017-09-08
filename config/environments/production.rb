@@ -4,6 +4,11 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  config.action_controller.perform_caching = true
+  config.cache_store = :memory_store
+  config.public_file_server.headers = {
+    'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
+  }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

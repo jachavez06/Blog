@@ -21,7 +21,7 @@ module Blog
     Groupdate.week_start = :mon # first three letters of day
 
     config.after_initialize do
-      cache = ActiveSupport::Cache::MemoryStore.new
+      #cache = ActiveSupport::Cache::MemoryStore.new
 
       # Grab only published articles
       @articles = Article.published
@@ -32,7 +32,8 @@ module Blog
       @articles.each do |a|
         a.tag_list.map { |b| @tags << b }
       end
-      cache.write('published_tags', @tags)
+      Rails.cache.write('published_tags', @tags)    
+      Rails.cache.write('published_articles', @articles)
     end
     #config.exception_handler = { dev: true }
     # Settings in config/environments/* take precedence over those specified here.
