@@ -27,7 +27,11 @@ class SessionsController < ApplicationController
       ahoy.authenticate(@admin)
 
       # Redirect
-      redirect_to articles_path
+      if request.referer == root_path
+        redirect_to articles_path
+      else
+        redirect_to request.referer
+      end
     else
       # Respond with error message
       respond_to do |format|
