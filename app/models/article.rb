@@ -35,6 +35,7 @@ class Article < ApplicationRecord
 
   ### BEGIN SCOPES ###
   scope :published, -> { where(state: :published) }
+  scope :unpublished, -> { where(state: :draft) }
   #### END SCOPES ####
 
   ### TAGS ###
