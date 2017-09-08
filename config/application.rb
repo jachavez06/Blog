@@ -19,7 +19,21 @@ module Blog
     config.exceptions_app = ->(env) { ExceptionsController.action(:exception).call(env) }
 
     Groupdate.week_start = :mon # first three letters of day
-    
+
+    config.after_initialize do
+      cache = ActiveSupport::Cache::MemoryStore.new
+
+      # Grab only published articles
+      @articles = Article.published
+
+      # Generate tags on published files
+      @tags = []
+
+      @articles.each do |a|
+        a.tag_list.map { |b| @tags << b }
+      end
+      cache.write('published_tags', @tags)
+    end
     #config.exception_handler = { dev: true }
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
