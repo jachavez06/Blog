@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   before_action :require_admin, only: %i[new create edit update destroy]
   before_action :no_index, only: %i[new edit]
 
-  @flash_messages =
+  @@flash_messages =
     { updated: 'Article was successfully updated!',
       no_change: 'Article was not updated because no changes were made!',
       created:  'Article was successfully created!',
@@ -35,12 +35,14 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(articles_params)
-    @article.make_publishable(articles_params) if publishing?
+
+    update_state if publishing?
 
     if @article.save
       flash[:success] = @@flash_messages[:created]
       redirect_to article_path(@article)
     else
+      # Revert make_publishable
       @article.state = :draft
       render 'new'
     end
@@ -49,27 +51,31 @@ class ArticlesController < ApplicationController
   def edit; end
 
   def show
+    # Redirect to root_path if article does not exist
+    redirect_to root_path && return unless defined? @article
+
+    # Add meta tags
     set_meta_tags title: @article.meta_data_title
     set_meta_tags description: @article.meta_data_description
     set_meta_tags keywords: @article.meta_data_keywords
     set_meta_tags canonical: request.original_url
+
+    # Increase view count
     impressionist(@article)
   end
 
   def update
+    # Update attributes
     @article.assign_attributes(articles_params)
-    if publishing?
-      @article.make_publishable(articles_params)
-    elsif unpublishing?
-      @article.make_unpublishable(articles_params)
+
+    # Content does not need to be updated
+    if publishing? || unpublishing?
+      update_state
+    # Content needs to be updated
     else
-      @article.assign_attributes(articles_params)
-      unless @article.edited?
-        (flash.now[:info] = @@flash_messages[:no_change])
-        render('edit')
-        return
-      end
+      throw_unchanged_error && return unless @article.edited?
     end
+
     save_article
   end
 
@@ -81,6 +87,19 @@ class ArticlesController < ApplicationController
 
   private
 
+  def update_state
+    if publishing?
+      @article.make_publishable(articles_params)
+    else
+      @article.make_unpublishable(articles_params)
+    end
+  end
+
+  def throw_unchanged_error
+    (flash.now[:info] = @@flash_messages[:no_change])
+    render('edit')
+  end
+
   def save_article
     if @article.save
       flash[:success] = @@flash_messages[:updated]
@@ -90,17 +109,17 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # Load article if it exists in db.
+  # Load article if exists
   def set_article
     slug = params[:id]
-
-    if Article.exists?(slug: slug)
-      if Rails.cache.read('published_articles').any? { |a| a.slug == slug } || admin?
-        @article = Article.find_by_slug(slug)
-      end
-    end
+    return unless Article.exists?(slug: slug)
+    return unless Rails.cache.read('published_articles').any? do |a|
+      a.slug == slug
+    end || admin?
+    @article = Article.find_by_slug(slug)
   end
 
+  # Strong params
   def articles_params
     params.require(:article).permit(:title, :content, :meta_data_title,
                                     :meta_data_description, :meta_data_keywords,
