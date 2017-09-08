@@ -3,10 +3,16 @@ class FiltersController < ApplicationController
   before_action :require_published, only: [:show]
 
   def show
-    @articles = Article.published.tagged_with(params[:tag])
+    # Load cache
+    published = Rails.cache.read('published_articles')
+
+    # Articles
+    @articles = published.tagged_with(params[:tag])
     @articles = @articles.paginate(page: params[:page], per_page: 10)
     @articles = @articles.order(created_at: :desc)
-    @tags = @articles.tag_counts_on(:tags)
+
+    # Tags
+    @tags = published.tag_counts_on(:tags)
   end
 
   private
