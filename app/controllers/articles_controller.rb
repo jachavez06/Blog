@@ -84,11 +84,10 @@ class ArticlesController < ApplicationController
   # Load article if it exists in db.
   def set_article
     slug = params[:id]
-    if Article.article_exists?(slug)
-      article = Article.find_by_slug(slug)
-      if admin? || Article.article_published?(article)
-        @article = article
-        return
+
+    if Article.exists?(slug: slug)
+      if Rails.cache.read('published_articles').any? { |a| a.slug == slug } || admin?
+        @article = Article.find_by_slug(slug)
       end
     end
   end

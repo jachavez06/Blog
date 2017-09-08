@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
     # Determine IP
     @ip ||= request.remote_ip
 
-
     @user = User.find_or_create_by(:ip => @ip)
 
     ahoy.authenticate(@user)
@@ -20,6 +19,6 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    @admin ||= current_user.admin_id != nil
+    @admin = session[:admin].present? ? session[:admin] : false
   end
 end
