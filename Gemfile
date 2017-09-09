@@ -6,7 +6,18 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
+gem 'ahoy_matey'
+gem 'bcrypt', '3.1.11'
+gem 'blazer'
 gem 'bootstrap', '4.0.0.alpha6'
+gem 'chartkick'
+gem 'ckeditor_rails'
+gem 'coffee-rails', '4.2.2'
+gem 'fog-aws'
+gem 'groupdate'
+gem 'impressionist'
+gem 'jbuilder', '2.7.0'
 gem 'jquery-rails', '4.3.1'
 gem 'meta-tags', '2.4.1'
 gem 'paperclip', '5.1.0'
@@ -14,28 +25,15 @@ gem 'pg', '0.21.0'
 gem 'puma', '3.9.1'
 gem 'rails', '5.1.3'
 gem 'rails-assets-tether', '1.4.0', source: 'https://rails-assets.org'
+gem 'rails-erd', require: false, group: :development
 gem 'redcarpet', '3.4.0'
 gem 'rouge', '2.1.1'
 gem 'sass-rails', '5.0.6'
+gem 'sitemap_generator'
 gem 'sprockets-rails', require: 'sprockets/railtie'
+gem 'turbolinks', '5.0.1'
 gem 'uglifier', '3.2.0'
 gem 'will_paginate', '~> 3.1.0'
-
-gem 'coffee-rails', '4.2.2'
-gem 'jbuilder', '2.7.0'
-gem 'turbolinks', '5.0.1'
-
-gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
-gem 'ahoy_matey'
-gem 'bcrypt', '3.1.11'
-gem 'blazer'
-gem 'chartkick'
-gem 'fog-aws'
-gem 'groupdate'
-gem 'impressionist'
-gem 'sitemap_generator'
-
-gem 'rails-erd', require: false, group: :development
 
 group :development do
   gem 'listen', '3.1.5'
