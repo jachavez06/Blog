@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <%= f.label :created_at %>:
                     <div class="input-group date">
-                        <%= f.text_field :created_at, value: article.created_at.strftime('%Y-%m-%d'), class: "form-control datepicker" %>
+                        <%= f.text_field :created_at, value: ( article.created_at != nil ? article.created_at.strftime('%Y-%m-%d') : Time.zone.now.strftime('%Y-%m-%d') ), class: "form-control datepicker" %>
                         <span class='input-group-addon'>
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                         </span>
@@ -56,7 +56,7 @@
                 <div class="form-group">
                         <%= f.label :updated_at %>:
                         <div class="input-group date">
-                            <%= f.text_field :updated_at, value: article.updated_at.strftime('%Y-%m-%d'), class: "form-control datepicker" %>
+                            <%= f.text_field :updated_at, value: ( article.updated_at != nil ? article.updated_at.strftime('%Y-%m-%d') : Time.zone.now.strftime('%Y-%m-%d') ), class: "form-control datepicker" %>
                             <span class='input-group-addon'>
                                 <i class="fa fa-calendar" aria-hidden="true"></i>
                             </span>
