@@ -11,12 +11,13 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery
-//= require ahoy
-//= require tether
-//= require bootstrap-sprockets
+//= require jquery3
+//= require popper
+//= require bootstrap
+//= require jquery_ujs
+//= require ckeditor-jquery
 //= require turbolinks
+//= require ahoy
 //= require Chart.bundle
 //= require chartkick
-//= require ckeditor-jquery
 //= require_tree .
