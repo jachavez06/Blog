@@ -1,1 +1,0 @@
-CKEDITOR.plugins.setLang("codemirror","ug",{toolbar:"\u0645\u06d5\u0646\u0628\u06d5",searchCode:"Search Source",autoFormat:"Format Selection",commentSelectedRange:"Comment Selection",uncommentSelectedRange:"Uncomment Selection",autoCompleteToggle:"Enable/Disable HTML Tag Autocomplete"});

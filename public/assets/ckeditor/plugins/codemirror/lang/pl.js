@@ -1,1 +1,0 @@
-CKEDITOR.plugins.setLang("codemirror","pl",{toolbar:"\u0179r\xf3d\u0142o dokumentu",autoFormat:"Sformatuj zaznaczenie",commentSelectedRange:"Zakomentuj zaznaczenie",uncommentSelectedRange:"Odkomentuj zaznaczenie",searchCode:"Wyszukaj w \u017ar\xf3dle",autoCompleteToggle:"W\u0142\u0105cza/Wy\u0142\u0105cza automatyczne uzupe\u0142niania tag\xf3w HTML"});
