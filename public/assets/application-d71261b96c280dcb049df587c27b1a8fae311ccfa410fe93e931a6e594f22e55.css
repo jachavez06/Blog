@@ -1,3 +1,16 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
 /*!
  * Bootstrap v4.0.0-beta (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -10464,4 +10477,1174 @@ a.text-dark:focus, a.text-dark:hover {
 /* line 9, /Users/jesse/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0.beta/assets/stylesheets/bootstrap/utilities/_visibility.scss */
 .invisible {
   visibility: hidden !important;
+}
+
+/* line 1, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-rendering: optimizelegibility;
+  background: #fafafa;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /*color: #555555;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;*/
+}
+
+/* line 16, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+/* line 20, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+#body {
+  padding: 10px;
+  padding-bottom: 200px;
+  /* Height of the footer */
+}
+
+/* line 24, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  /* Height of the footer */
+  background-color: #1B1F21;
+  font-family: "Montserrat", Helvetica, sans-serif;
+}
+
+/* line 34, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 40, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 47, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel {
+  margin-bottom: 24px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* line 56, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-body {
+  padding: 15px;
+}
+
+/* line 60, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-body:before,
+.panel-body:after {
+  content: " ";
+  display: table;
+}
+
+/* line 66, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-body:after {
+  clear: both;
+}
+
+/* line 70, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+/* line 77, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+
+/* line 81, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  color: inherit;
+}
+
+/* line 88, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-title > a,
+.panel-title > small,
+.panel-title > .small,
+.panel-title > small > a,
+.panel-title > .small > a {
+  color: inherit;
+}
+
+/* line 96, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid transparent;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* line 104, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .list-group,
+.panel > .panel-collapse > .list-group {
+  margin-bottom: 0;
+}
+
+/* line 109, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .list-group .list-group-item,
+.panel > .panel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+
+/* line 115, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .list-group:first-child .list-group-item:first-child,
+.panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+/* line 122, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .list-group:last-child .list-group-item:last-child,
+.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* line 129, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+/* line 134, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+
+/* line 138, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.list-group + .panel-footer {
+  border-top-width: 0;
+}
+
+/* line 142, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table,
+.panel > .table-responsive > .table,
+.panel > .panel-collapse > .table {
+  margin-bottom: 0;
+}
+
+/* line 148, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table caption,
+.panel > .table-responsive > .table caption,
+.panel > .panel-collapse > .table caption {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 155, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table:first-child,
+.panel > .table-responsive:first-child > .table:first-child {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+/* line 161, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+/* line 169, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+
+/* line 180, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+
+/* line 191, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table:last-child,
+.panel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* line 197, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* line 205, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+/* line 216, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+/* line 227, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .panel-body + .table,
+.panel > .panel-body + .table-responsive,
+.panel > .table + .panel-body,
+.panel > .table-responsive + .panel-body {
+  border-top: 1px solid #eeeeee;
+}
+
+/* line 234, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+
+/* line 239, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table-bordered,
+.panel > .table-responsive > .table-bordered {
+  border: 0;
+}
+
+/* line 244, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table-bordered > thead > tr > th:first-child,
+.panel > .table-bordered > thead > tr > td:first-child,
+.panel > .table-bordered > tbody > tr > th:first-child,
+.panel > .table-bordered > tbody > tr > td:first-child,
+.panel > .table-bordered > tfoot > tr > th:first-child,
+.panel > .table-bordered > tfoot > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+
+/* line 259, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table-bordered > thead > tr > th:last-child,
+.panel > .table-bordered > thead > tr > td:last-child,
+.panel > .table-bordered > tbody > tr > th:last-child,
+.panel > .table-bordered > tbody > tr > td:last-child,
+.panel > .table-bordered > tfoot > tr > th:last-child,
+.panel > .table-bordered > tfoot > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+
+/* line 274, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table-bordered > thead > tr:first-child > td,
+.panel > .table-bordered > thead > tr:first-child > th,
+.panel > .table-bordered > tbody > tr:first-child > td,
+.panel > .table-bordered > tbody > tr:first-child > th,
+.panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+
+/* line 285, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table-bordered > tbody > tr:last-child > td,
+.panel > .table-bordered > tbody > tr:last-child > th,
+.panel > .table-bordered > tfoot > tr:last-child > td,
+.panel > .table-bordered > tfoot > tr:last-child > th,
+.panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+
+/* line 296, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel > .table-responsive {
+  border: 0;
+  margin-bottom: 0;
+}
+
+/* line 301, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-group {
+  margin-bottom: 24px;
+}
+
+/* line 305, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+
+/* line 310, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-group .panel + .panel {
+  margin-top: 5px;
+}
+
+/* line 314, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-group .panel-heading {
+  border-bottom: 0;
+}
+
+/* line 318, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-group .panel-heading + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group {
+  border-top: 1px solid transparent;
+}
+
+/* line 323, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-group .panel-footer {
+  border-top: 0;
+}
+
+/* line 327, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid transparent;
+}
+
+/* line 331, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-default {
+  border-color: transparent;
+}
+
+/* line 335, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-default > .panel-heading {
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: transparent;
+}
+
+/* line 341, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: transparent;
+}
+
+/* line 345, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-default > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333333;
+}
+
+/* line 350, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-default > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: transparent;
+}
+
+/* line 354, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-primary {
+  border-color: transparent;
+}
+
+/* line 358, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #158CBA;
+  border-color: transparent;
+}
+
+/* line 364, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: transparent;
+}
+
+/* line 368, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-primary > .panel-heading .badge {
+  color: #158CBA;
+  background-color: #fff;
+}
+
+/* line 373, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: transparent;
+}
+
+/* line 377, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-success {
+  border-color: transparent;
+}
+
+/* line 381, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-success > .panel-heading {
+  color: #fff;
+  background-color: #28B62C;
+  border-color: transparent;
+}
+
+/* line 387, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: transparent;
+}
+
+/* line 391, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-success > .panel-heading .badge {
+  color: #28B62C;
+  background-color: #fff;
+}
+
+/* line 396, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: transparent;
+}
+
+/* line 400, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-info {
+  border-color: transparent;
+}
+
+/* line 404, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-info > .panel-heading {
+  color: #fff;
+  background-color: #75CAEB;
+  border-color: transparent;
+}
+
+/* line 410, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: transparent;
+}
+
+/* line 414, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-info > .panel-heading .badge {
+  color: #75CAEB;
+  background-color: #fff;
+}
+
+/* line 419, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: transparent;
+}
+
+/* line 423, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-warning {
+  border-color: transparent;
+}
+
+/* line 427, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-warning > .panel-heading {
+  color: #fff;
+  background-color: #FF851B;
+  border-color: transparent;
+}
+
+/* line 433, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: transparent;
+}
+
+/* line 437, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-warning > .panel-heading .badge {
+  color: #FF851B;
+  background-color: #fff;
+}
+
+/* line 442, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: transparent;
+}
+
+/* line 446, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-danger {
+  border-color: transparent;
+}
+
+/* line 450, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-danger > .panel-heading {
+  color: #fff;
+  background-color: #FF4136;
+  border-color: transparent;
+}
+
+/* line 456, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: transparent;
+}
+
+/* line 460, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-danger > .panel-heading .badge {
+  color: #FF4136;
+  background-color: #fff;
+}
+
+/* line 465, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: transparent;
+}
+
+/* line 469, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+/* line 476, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-default {
+  border-color: transparent;
+}
+
+/* line 480, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* line 486, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.lesson-card {
+  position: relative;
+  min-height: 75px;
+  text-align: left;
+  -webkit-transition: background, 0.1s;
+  transition: background, 0.1s;
+  display: block;
+  border-radius: 5px;
+  padding: 0px 10px;
+}
+
+/* line 498, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-body > hr {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+}
+
+/* line 509, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.panel-body :first-child {
+  margin-top: 0px;
+}
+
+/* line 512, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.nb-error {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 480px;
+  padding: 60px 30px;
+}
+
+/* line 519, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.nb-error .error-code {
+  color: #2d353c;
+  font-size: 96px;
+  line-height: 100px;
+}
+
+/* line 525, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.nb-error .error-desc {
+  font-size: 12px;
+  color: #647788;
+}
+
+/* line 529, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rails.scss */
+.nb-error .input-group {
+  margin: 30px 0;
+}
+
+/* line 2, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 24px 0;
+  border-radius: 4px;
+}
+
+/* line 9, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination > li {
+  display: inline;
+}
+
+/* line 13, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 7px 12px;
+  line-height: 1.5;
+  text-decoration: none;
+  color: #555555;
+  background-color: #eeeeee;
+  border: 1px solid #e2e2e2;
+  margin-left: -1px;
+}
+
+/* line 26, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+/* line 33, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* line 39, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus {
+  z-index: 2;
+  color: #555555;
+  background-color: #eeeeee;
+  border-color: #e2e2e2;
+}
+
+/* line 49, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+  z-index: 3;
+  color: #fff;
+  background-color: #FF4136;
+  border-color: #ff291d;
+  cursor: default;
+}
+
+/* line 62, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #999999;
+  background-color: #eeeeee;
+  border-color: #e2e2e2;
+  cursor: not-allowed;
+}
+
+/* line 74, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: 13px 16px;
+  font-size: 20px;
+  line-height: 1.3333333;
+}
+
+/* line 81, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+/* line 87, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* line 93, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 4px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* line 100, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+/* line 106, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/pagination.scss */
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+/* line 2, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/headers.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* line 6, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/headers.scss */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #333333;
+}
+
+/* line 12, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/headers.scss */
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+/* line 1, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/sidebar.scss */
+.page-header {
+  padding-bottom: 11px;
+  margin: 48px 0 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* line 6, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/sidebar.scss */
+.next-episode-card {
+  border-bottom: 1px solid #efefef;
+  color: #333;
+  display: block;
+  padding: 10px 0px;
+  position: relative;
+}
+
+/* line 13, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/sidebar.scss */
+.sidebar-section {
+  border-top: 1px solid #eeeeee;
+}
+
+/*!
+ * Start Bootstrap - Clean Blog v3.3.7+1 (http://startbootstrap.com/template-overviews/clean-blog)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+/* line 9, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+#welcome-text {
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 75px;
+}
+
+/* line 17, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+.intro-header {
+  background-image: url(/assets/cover-image-a3be2c6632b137d6d86361d0acf29c64d65ddc8db04a686dd7c7435125c2b7a1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+/* line 28, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+.intro-header .site-heading {
+  padding: 100px 0 50px;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 33, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+  .intro-header .site-heading {
+    padding: 150px 0;
+  }
+}
+/* line 37, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+.intro-header .site-heading {
+  text-align: center;
+}
+
+/* line 40, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+.intro-header .site-heading #welcome_header {
+  margin-top: 0;
+  font-size: 50px;
+}
+
+/* line 45, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+.intro-header .site-heading .subheading {
+  font-size: 24px;
+  line-height: 1.1;
+  display: block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 54, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+  .intro-header .site-heading #welcome_header {
+    font-size: 80px;
+  }
+
+  /* line 57, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+  .intro-header .site-heading {
+    padding: 150px 0;
+  }
+}
+/* line 61, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+#welcome-head-sep {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* line 65, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+#welcome-head-sep > hr {
+  border-top: 1px solid white;
+  margin-top: -15px;
+}
+
+/* line 69, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+.step-header {
+  background-color: #FFFFFF;
+  color: #ea1775;
+  font-weight: bolder;
+  text-transform: capitalize;
+  font-family: arial;
+  font-style: normal;
+  line-height: 2;
+}
+
+/* line 78, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+.circled-number {
+  border-radius: 50%;
+  behavior: url(PIE.htc);
+  /* remove if you don't care about IE8 */
+  padding: 4px 10px;
+  border: 2px solid;
+  text-align: center;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+/* line 87, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/welcome.scss */
+.step-header-text {
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+
+/* line 1, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/footer.scss */
+footer {
+  background-color: #1B1F21;
+  color: #ccc;
+}
+
+/* line 14, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/footer.scss */
+#strong-footer {
+  border-bottom: 1px solid;
+  font-size: 20px;
+}
+
+/* line 18, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/footer.scss */
+#github {
+  font-size: 1.5em;
+  color: #ccc;
+  -webkit-transition: font-size 1s;
+  transition: font-size 1s;
+}
+
+/* line 24, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/footer.scss */
+#github:hover {
+  font-size: 1.65em;
+  color: #8e8e8e;
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
+}
+
+/* line 29, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/footer.scss */
+#copyright {
+  margin-top: 25px;
+  border-bottom: 1px solid;
+  text-align: center;
+}
+
+/* line 1, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/navbar.scss */
+.bg-inverse {
+  background-color: #1B1F21 !important;
+}
+
+/* line 4, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/navbar.scss */
+.navbar .divider-vertical {
+  height: 75%;
+  margin-top: 5px;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  padding-left: 5px;
+}
+
+/* line 12, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/navbar.scss */
+.navbar-inverse .divider-vertical {
+  border-right-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 767px) {
+  /* line 18, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/navbar.scss */
+  .navbar-collapse .nav > .divider-vertical {
+    display: none;
+  }
+}
+/* line 23, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/navbar.scss */
+#logout:hover {
+  color: rgba(255, 0, 0, 0.85);
+}
+
+/* line 26, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/navbar.scss */
+#login:hover {
+  color: rgba(0, 255, 127, 0.85);
+}
+
+/* line 7, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/article.scss */
+.article-card-title {
+  font-size: 26px;
+  font-family: "Istok Web";
+  line-height: 1;
+}
+
+/* line 12, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/article.scss */
+.article-card-title > a {
+  color: #31708f;
+}
+
+/* line 15, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/article.scss */
+.article-card-title > a:hover {
+  color: #2c9ebf;
+}
+
+/* line 18, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/article.scss */
+.article-card-date {
+  color: #464a4c;
+  font-size: small;
+  font-family: "Istok Web";
+  margin-bottom: 7px;
+}
+
+/* line 24, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/article.scss */
+.article-card-body {
+  color: #a94442;
+  font-family: "Istok Web";
+}
+
+/* line 28, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/article.scss */
+.article-card-divider {
+  width: auto;
+}
+
+/* line 31, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/article.scss */
+#tag-header {
+  margin-top: 15px;
+  border-bottom: 0;
+}
+
+/* line 35, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/article.scss */
+.outline {
+  border: 1px solid black;
+}
+
+/* line 38, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/article.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 1, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight table td {
+  padding: 5px;
+}
+
+/* line 2, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight table pre {
+  margin: 0;
+}
+
+/* line 3, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight, .highlight .w {
+  color: #303030;
+}
+
+/* line 6, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+
+/* line 10, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+
+/* line 13, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .cp {
+  color: #f4bf75;
+}
+
+/* line 16, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .nt {
+  color: #f4bf75;
+}
+
+/* line 19, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+
+/* line 22, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+
+/* line 25, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .gi {
+  color: #90a959;
+}
+
+/* line 28, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .gd {
+  color: #ac4142;
+}
+
+/* line 31, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+
+/* line 36, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+
+/* line 39, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .kc {
+  color: #d28445;
+}
+
+/* line 42, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .kt {
+  color: #d28445;
+}
+
+/* line 45, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .kd {
+  color: #d28445;
+}
+
+/* line 48, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+
+/* line 51, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .sr {
+  color: #75b5aa;
+}
+
+/* line 54, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .si {
+  color: #8f5536;
+}
+
+/* line 57, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .se {
+  color: #8f5536;
+}
+
+/* line 60, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .nn {
+  color: #f4bf75;
+}
+
+/* line 63, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .nc {
+  color: #f4bf75;
+}
+
+/* line 66, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .no {
+  color: #f4bf75;
+}
+
+/* line 69, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .na {
+  color: #6a9fb5;
+}
+
+/* line 72, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+
+/* line 75, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight .ss {
+  color: #90a959;
+}
+
+/* line 78, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.highlight {
+  background-color: #f5f5f5;
+  padding: 0;
+  margin: 0rem 1rem;
+}
+
+/* line 83, /Volumes/Colosseum/Code/Ruby/blog/app/assets/stylesheets/rouge.scss.erb */
+.codebox {
+  border: 1px solid #c4c4c4;
+  background-color: #f5f5f5;
+  white-space: pre-line;
+  font-size: 0.9em;
+  width: 100%;
+  border-radius: 5px;
 }
