@@ -47,8 +47,8 @@ class Article < ApplicationRecord
 
   # Styles tags to display on Article's show page
   def styled_tags
-    to_return = '<span class="badge badge-pill badge-default">'
-    tags = tag_list.join('</span><span class="badge badge-pill badge-default">')
+    to_return = '<span class="badge badge-pill badge-secondary">'
+    tags = tag_list.join('</span>&nbsp;<span class="badge badge-pill badge-secondary">')
     to_return + tags + '</span>'
   end
   #### END TAGS ####

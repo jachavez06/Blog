@@ -56,16 +56,16 @@
                 <div class="float-sm-right">
                     <% if article.published? %>
                         <%= f.submit "Update", class: "btn btn-primary" %>
-                        <%= f.submit "Unpublish", class: "btn btn-default" %>
+                        <%= f.submit "Unpublish", class: "btn btn-secondary" %>
                     <% else %>
                         <%= f.submit "Publish", class: "btn btn-primary" %>
-                        <%= f.submit "Save", class: "btn btn-default" %>
+                        <%= f.submit "Save", class: "btn btn-secondary" %>
                     <% end %>
 
                     <% if article.draft?%>
-                        <%= link_to "Cancel", admin_path, class: "btn btn-secondary" %>
+                        <%= link_to "Cancel", admin_path, class: "btn btn-light" %>
                     <% else %>
-                        <%= link_to "Cancel", article_path(@article), class: "btn btn-secondary" %>
+                        <%= link_to "Cancel", article_path(@article), class: "btn btn-light" %>
                     <% end %>
                 </div>
             </div>
