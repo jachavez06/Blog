@@ -1,1 +1,0 @@
-CKEDITOR.editorConfig=function(t){t.allowedContent=!0,t.removeFormatAttributes="",t.entities=!1,t.height=500,t.extraPlugins="codemirror",t.contentsCss="/assets/ckeditor/contents.scss"};

@@ -7,8 +7,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap', '4.0.0.alpha6'
-gem 'ckeditor', '4.2.4'
-#gem 'exception_handler'
 gem 'jquery-rails', '4.3.1'
 gem 'meta-tags', '2.4.1'
 gem 'paperclip', '5.1.0'
@@ -23,32 +21,30 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'uglifier', '3.2.0'
 gem 'will_paginate', '~> 3.1.0'
 
-
 gem 'coffee-rails', '4.2.2'
 gem 'jbuilder', '2.7.0'
 gem 'turbolinks', '5.0.1'
 
-gem 'ahoy_matey' 
-gem 'bcrypt', '3.1.11'
-gem 'sitemap_generator'
-gem 'fog-aws'
-gem 'chartkick'
-gem 'groupdate'
-gem 'blazer'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
+gem 'ahoy_matey'
+gem 'bcrypt', '3.1.11'
+gem 'blazer'
+gem 'chartkick'
+gem 'fog-aws'
+gem 'groupdate'
 gem 'impressionist'
-
+gem 'sitemap_generator'
 
 gem 'rails-erd', require: false, group: :development
 
 group :development do
   gem 'listen', '3.1.5'
-  gem 'web-console', '3.5.1'
   gem 'spring', '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'web-console', '3.5.1'
 
   # Debug
-  #gem 'better_errors', '2.3.0'
+  # gem 'better_errors', '2.3.0'
   gem 'binding_of_caller', '0.7.2'
   gem 'byebug', '9.0.6'
   gem 'meta_request', '0.4.3'

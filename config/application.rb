@@ -11,9 +11,6 @@ module Blog
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    config.autoload_paths += %W[#{config.root}/app/models/ckeditor]
-    config.assets.precompile += Ckeditor.assets
-    config.assets.precompile += %w[ckeditor/*]
 
     # For custom exceptions routes
     config.exceptions_app = ->(env) { ExceptionsController.action(:exception).call(env) }

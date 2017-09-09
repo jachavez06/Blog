@@ -1,1 +1,0 @@
-CKEDITOR.editorConfig=function(i){i.entities=!1,i.height=500,i.extraPlugins="codemirror"};
