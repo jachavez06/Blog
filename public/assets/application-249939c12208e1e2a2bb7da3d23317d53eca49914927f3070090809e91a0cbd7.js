@@ -38328,6 +38328,13 @@ module.exports = function(Chart) {
 
 }).call(this);
 (function() {
+  CKEDITOR.editorConfig = function(config) {
+    config.enterMode = CKEDITOR.ENTER_BR;
+    config.autoParagraph = false;
+  };
+
+}).call(this);
+(function() {
   document.addEventListener('turbolinks:load', function(event) {
     if (typeof ga === 'function') {
       ga('set', 'location', event.data.url);

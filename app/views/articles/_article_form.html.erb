@@ -10,7 +10,13 @@
                 </div>
                 <div class="form-group">
                     <%= f.label :content%>
-                   <%= f.text_area :content, rows: 50, class:"form-control ckeditor", placeholder: "Body of article" %>
+                   <%= f.text_area :content, rows: 50, class:"form-control", placeholder: "Body of article", id: "article" %>
+                   <script>
+                        CKEDITOR.replace( 'article', {
+                            enterMode: CKEDITOR.ENTER_BR,
+                            autoParagraph: false
+                        });
+                   </script>
                 </div>
             </div>
         </div>
