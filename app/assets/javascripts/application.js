@@ -16,7 +16,6 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require ckeditor/init
 //= require Chart.bundle
 //= require chartkick
 //= require_tree .
