@@ -20,4 +20,5 @@
 //= require ahoy
 //= require Chart.bundle
 //= require chartkick
+//= require bootstrap-datepicker
 //= require_tree .

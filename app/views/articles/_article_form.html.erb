@@ -46,12 +46,22 @@
                 <h5>Timestamps</h5>
                 <div class="form-group">
                     <%= f.label :created_at %>:
-                    <%= f.date_select :created_at, class:"form-control" %>
+                    <div class="input-group date">
+                        <%= f.text_field :created_at, value: article.created_at.strftime('%Y-%m-%d'), class: "form-control datepicker" %>
+                        <span class='input-group-addon'>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <%= f.label :updated_at %>:
-                    <%= f.date_select :updated_at, class:"form-control" %>
-                </div>
+                        <%= f.label :updated_at %>:
+                        <div class="input-group date">
+                            <%= f.text_field :updated_at, value: article.updated_at.strftime('%Y-%m-%d'), class: "form-control datepicker" %>
+                            <span class='input-group-addon'>
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
 
                 <div class="float-sm-right">
                     <% if article.published? %>
