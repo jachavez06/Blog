@@ -8,7 +8,7 @@
         <!-- Article -->
         <div class="panel panel-default">
             <div class="panel-body">
-                <%= @article.content.html_safe %>
+                <%= markdown(@article.content) %>
                 <%= render "article_navigation", :article => @article %>
             </div>
         </div>
